@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "med/drug/セファゾリン.md",
+                "file": "水垢.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "セファゾリン"
+              "title": "水垢"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "med/drug/セファゾリン.md",
+                "file": "水垢.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "med/drug/セファゾリン.md",
+                "file": "水垢.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "med/drug/セファゾリン.md",
+                "file": "水垢.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,28 +190,47 @@
   },
   "active": "c1cd94c03b8ff314",
   "lastOpenFiles": [
-    "med/drug/アゾセミド.md",
-    "ルシャトリエの原理.md",
-    "med/drug/デキサメタゾン.md",
-    "med/drug/セフメタゾール.md",
-    "med/drug/トラセミド.md",
-    "med/microbiota/bacteria",
+    "med/calc/ガンマ計算.md",
+    "med/calc",
+    "med/enzyme/oxidase.md",
+    "med/enzyme/oxydase.md",
+    "med/enzyme",
+    "med/bacteria/Citrobacter.md",
+    "シリカスケール.md",
+    "med/bacteria/Enterobacter.md",
+    "med/bacteria/Helicobacter.md",
+    "med/bacteria/Acinetobacter.md",
     "med/drug/セフトリアキソン.md",
-    "med/drug/セフカペン.md",
-    "med/drug/セファゾリン.md",
-    "med/drug/ジギタリス.md",
+    "med/drug/ケトプロフェン.md",
+    "med/drug/ロキソプロフェン.md",
+    "med/drug/セフメタゾール.md",
+    "med/drug/フェブキソスタット.md",
+    "med/drug/アロプリノール.md",
+    "med/drug/タゾバクタム.md",
+    "med/drug/スルバクタム.md",
+    "med/drug/ピペラシリン.md",
+    "med/drug/アモキシシリン.md",
+    "med/drug/アンピシリン.md",
+    "med/drug/ベタメタゾン.md",
+    "med/drug/プレドニゾロン.md",
+    "elec/RC回路の放電.md",
+    "クエン酸.md",
+    "med/hormone/カテコールアミン.md",
+    "med/hormone/バソプレシン.md",
+    "med/hormone/アルドステロン.md",
+    "med/hormone",
+    "med/bacteria",
+    "med/drug",
     "med/attachments/トラセミド.png",
     "med/attachments/デキサメタゾン.png",
     "med/attachments/セフメタゾール.png",
-    "med/attachments/セフカペンピボキシル.png",
     "med/attachments/セフトリアキソン.png",
+    "med/attachments/セフカペンピボキシル.png",
     "med/attachments/セファゾリン.png",
     "med/attachments/アゾセミド.png",
-    "med/microbiota",
-    "med/drug",
     "med/attachments",
-    "med",
-    "クエン酸.md",
-    "酢.md"
+    "med/microbiota/bacteria",
+    "med/microbiota",
+    "med"
   ]
 }
