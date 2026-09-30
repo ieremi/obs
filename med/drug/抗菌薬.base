@@ -2,9 +2,9 @@ filters:
   or:
     - file.hasTag("drug/antibiotic", "drug/antibiotic/penicillin", "drug/antibiotic/cephalosporin", "drug/antibiotic/beta-lactamase-inhibitor")
 formulas:
-  lineage: 'if(file.hasTag("drug/antibiotic/penicillin"), "ペニシリン系", if(file.hasTag("drug/antibiotic/cephalosporin"), "セフェム系", if(file.hasTag("drug/antibiotic/beta-lactamase-inhibitor"), "β-ラクタマーゼ阻害薬", "その他")))'
-  brand_jp: 'brand_names.jp'
-  pubchem: 'if(pubchem_cid, link("https://pubchem.ncbi.nlm.nih.gov/compound/" + pubchem_cid, pubchem_cid.toString()), "")'
+  lineage: if(file.hasTag("drug/antibiotic/penicillin"), "ペニシリン系", if(file.hasTag("drug/antibiotic/cephalosporin"), "セフェム系", if(file.hasTag("drug/antibiotic/beta-lactamase-inhibitor"), "β-ラクタマーゼ阻害薬", "その他")))
+  brand_jp: brand_names.jp
+  pubchem: if(pubchem_cid, link("https://pubchem.ncbi.nlm.nih.gov/compound/" + pubchem_cid, pubchem_cid.toString()), "")
 properties:
   file.name:
     displayName: ノート
@@ -40,7 +40,7 @@ views:
     name: 経口薬
     filters:
       and:
-        - 'routes.contains("経口")'
+        - routes.contains("経口")
     order:
       - file.name
       - formula.lineage
@@ -54,9 +54,9 @@ views:
     name: 注射薬
     filters:
       or:
-        - 'routes.contains("静注")'
-        - 'routes.contains("点滴静注")'
-        - 'routes.contains("筋注")'
+        - routes.contains("静注")
+        - routes.contains("点滴静注")
+        - routes.contains("筋注")
     order:
       - file.name
       - formula.lineage
