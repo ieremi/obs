@@ -11,10 +11,14 @@
             "id": "c1cd94c03b8ff314",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "ルシャトリエの原理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ルシャトリエの原理"
             }
           }
         ]
@@ -95,6 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "ルシャトリエの原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "ルシャトリエの原理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -155,6 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "ルシャトリエの原理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -182,5 +189,8 @@
     }
   },
   "active": "c1cd94c03b8ff314",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "クエン酸.md",
+    "酢.md"
+  ]
 }
