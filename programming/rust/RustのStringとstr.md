@@ -8,6 +8,7 @@ tags:
   - プログラミング/Rust
 related:
   - "[[Rustの借用]]"
+  - "[[Rustのスライス]]"
 ---
 
 # Rust の String と &str

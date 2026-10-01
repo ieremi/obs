@@ -9,6 +9,7 @@ tags:
   - physiology/respiratory
 related:
   - "[[気管支喘息]]"
+  - "[[Henderson-Hasselbalch式]]"
 ---
 
 # 肺胞換気と PaCO₂
