@@ -18,7 +18,7 @@ $$
 \boxed{p_i=\frac{e^{z_i}}{\sum_j e^{z_j}}}
 $$
 
-各 $p_i>0$ かつ $\sum_i p_i=1$。
+各 $0<p_i$ かつ $\sum_i p_i=1$。
 
 正解クラスを $k$ とすると cross entropy loss は、
 

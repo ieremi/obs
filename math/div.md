@@ -28,9 +28,9 @@ $$
 +\frac{\partial F_z}{\partial z}}
 $$
 
-たとえば $\partial F_x/\partial x>0$ なら、$x$ 方向について、箱の右面から出る流れが左面から入る流れより多い。それを3方向について足し合わせる。
+たとえば $0<\partial F_x/\partial x$ なら、$x$ 方向について、箱の右面から出る流れが左面から入る流れより多い。それを3方向について足し合わせる。
 
-- $\operatorname{div}\mathbf{F}>0$：局所的な湧き出し。
+- $0<\operatorname{div}\mathbf{F}$：局所的な湧き出し。
 - $\operatorname{div}\mathbf{F}<0$：局所的な吸い込み。
 - $\operatorname{div}\mathbf{F}=0$：流入と流出が釣り合う。流れ自体がないという意味ではない。
 
@@ -118,7 +118,7 @@ $$
 
 を考える。大きさは $1/r^2$ で、常に外向きである。
 
-1. $r>0$ で $\nabla\cdot\mathbf{F}=0$ を示せ。
+1. $0<r$ で $\nabla\cdot\mathbf{F}=0$ を示せ。
 2. 原点を中心とする半径 $R$ の球面を通る外向きの流束 $\iint \mathbf{F}\cdot\mathbf{n}\,dS$ を求めよ。$\mathbf{n}$ は外向き単位法線とする。
 3. 発散定理「境界から出る流束＝内部の発散の体積積分」と矛盾しない理由を説明せよ。
 
@@ -137,7 +137,7 @@ $$
 \frac{D}{Dt}=\frac{\partial}{\partial t}+\mathbf{v}\cdot\nabla
 $$
 
-となることを示せ。さらに $\mathbf{v}=-a(x,y,z)$（$a>0$ は定数）のとき、流体粒子が持つ初期密度 $\rho_0$ は時間とともにどう変わるか。
+となることを示せ。さらに $\mathbf{v}=-a(x,y,z)$（$0<a$ は定数）のとき、流体粒子が持つ初期密度 $\rho_0$ は時間とともにどう変わるか。
 
 **発展問題のこたえと解説**
 
@@ -155,7 +155,7 @@ $$
 $$
 \nabla\cdot\mathbf{F}
 =\frac{3}{r^3}-\frac{3(x^2+y^2+z^2)}{r^5}=0
-\quad(r>0)
+\quad(0<r)
 $$
 
 球面では $\mathbf{F}\cdot\mathbf{n}=1/R^2$ が一定だから、
