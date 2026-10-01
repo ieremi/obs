@@ -94,7 +94,7 @@ JCS は大きいほど重く、GCS と CRS-R は小さいほど重いので、�
 | 外傷 222,540 人(日本外傷データバンク) | 院内死亡の予測(AUROC)。JCS 10 段階で 0.874、GCS 合計で 0.878、JCS を 4 段階に粗くしても 0.859 | Yumoto 2019 |
 | 小児外傷 9,045 人(16 歳未満) | 院内死亡の予測(AUC)。JCS 0.930、GCS 0.929 | Enomoto 2022 |
 
-脳卒中での 30 日死亡ハザード比(点)と 95% 信頼区間(横線)。横軸は対数目盛(Shigematsu 2013):
+脳卒中での 30 日死亡[[ハザード比]](点)と 95% 信頼区間(横線)。横軸は対数目盛(Shigematsu 2013):
 
 <svg viewBox="0 0 600 215" width="600" role="img" aria-label="脳卒中 13,788 人での JCS の桁ごとの 30 日死亡ハザード比(95% 信頼区間)。0 桁を基準 1 として、I 桁 5.55(4.19–7.37)、II 桁 9.54(7.16–12.71)、III 桁 35.21(26.10–44.83)" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
   <g stroke="currentColor" stroke-width="1" opacity="0.2">
