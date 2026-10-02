@@ -47,7 +47,7 @@ tags:
 ### 名前の変遷
 | 年 | 学名 | 理由 |
 | --- | --- | --- |
-| 1984〜85 年 | *Campylobacter pyloridis* | 形がカンピロバクターに似ていたため同じ属に入れられた |
+| 1984〜85 年 | *Campylobacter pyloridis* | 形が[[Campylobacter\|カンピロバクター]]に似ていたため同じ属に入れられた |
 | 1987 年 | *Campylobacter pylori* | 種小名の属格の形を正しく直した(下の文法を参照) |
 | 1989 年 | *Helicobacter pylori* | 鞭毛の構造や遺伝子がカンピロバクターと違うことがわかり、新しい属が立てられた |
 
