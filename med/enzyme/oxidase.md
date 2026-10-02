@@ -91,7 +91,7 @@ $$\mathrm{4\,cyt\,c^{2+} + O_2 + 8H^+_{内} \rightarrow 4\,cyt\,c^{3+} + 2H_2O +
 | --- | --- |
 | 緑膿菌 (*Pseudomonas aeruginosa*) | 腸内細菌目細菌([[Escherichia_coli\|大腸菌]]、[[Enterobacter]]、[[Citrobacter]]、クレブシエラなど) |
 | ナイセリア属(淋菌、髄膜炎菌) | [[Acinetobacter]] |
-| ビブリオ属、エロモナス属 | ステノトロフォモナス・マルトフィリア |
+| ビブリオ属、[[Aeromonas\|エロモナス属]] | ステノトロフォモナス・マルトフィリア |
 | カンピロバクター属、[[Helicobacter]] | |
 | モラクセラ・カタラーリス | |
 | パスツレラ属 | |
