@@ -1,8 +1,8 @@
 filters:
   or:
-    - file.hasTag("drug/antibiotic", "drug/antibiotic/penicillin", "drug/antibiotic/cephalosporin", "drug/antibiotic/beta-lactamase-inhibitor")
+    - file.hasTag("drug/antibiotic", "drug/antibiotic/penicillin", "drug/antibiotic/cephalosporin", "drug/antibiotic/beta-lactamase-inhibitor", "drug/antibiotic/macrolide")
 formulas:
-  lineage: if(file.hasTag("drug/antibiotic/penicillin"), "ペニシリン系", if(file.hasTag("drug/antibiotic/cephalosporin"), "セフェム系", if(file.hasTag("drug/antibiotic/beta-lactamase-inhibitor"), "β-ラクタマーゼ阻害薬", "その他")))
+  lineage: if(file.hasTag("drug/antibiotic/penicillin"), "ペニシリン系", if(file.hasTag("drug/antibiotic/cephalosporin"), "セフェム系", if(file.hasTag("drug/antibiotic/beta-lactamase-inhibitor"), "β-ラクタマーゼ阻害薬", if(file.hasTag("drug/antibiotic/macrolide"), "マクロライド系", "その他"))))
   brand_jp: brand_names.jp
   pubchem: if(pubchem_cid, link("https://pubchem.ncbi.nlm.nih.gov/compound/" + pubchem_cid, pubchem_cid.toString()), "")
 properties:
