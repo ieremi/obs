@@ -32,14 +32,12 @@ properties:
     displayName: うっていない
   expensive:
     displayName: たかい
-  cheap:
-    displayName: やすい
   new_available:
     displayName: 新品でかえる
   pdf:
     displayName: pdf
-  era:
-    displayName: 時代
+  my_era:
+    displayName: 自分の時代
   subject:
     displayName: 科目など
   size:
@@ -48,6 +46,8 @@ properties:
     displayName: とっておく？
   destination:
     displayName: ゆきさき
+  paper:
+    displayName: 紙
   formula.amazon:
     displayName: Amazon
 views:
@@ -59,19 +59,21 @@ views:
       - subject
       - list_price
       - amazon_used_price_minimum
-      - cheap
       - expensive
       - new_available
       - ebook_available
       - pdf
-      - era
+      - my_era
       - keep
       - destination
+      - paper
       - size
       - formula.amazon
     sort:
       - property: file.name
         direction: ASC
+    columnSize:
+      note.paper: 113
   - type: table
     name: まだきめていない
     filters:
@@ -80,13 +82,13 @@ views:
         - destination.isEmpty()
     order:
       - file.name
-      - cheap
       - expensive
       - new_available
       - ebook_available
       - pdf
       - keep
       - destination
+      - paper
     sort:
       - property: file.name
         direction: ASC
