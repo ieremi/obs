@@ -105,3 +105,67 @@ views:
     sort:
       - property: amazon_used_price_minimum
         direction: ASC
+  - type: table
+    name: ゆきさき：スキャン業者
+    filters:
+      and:
+        - destination == "スキャン業者"
+    order:
+      - file.name
+      - author
+      - subject
+      - pdf
+      - keep
+      - paper
+      - size
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: ゆきさき：みずからきる
+    filters:
+      and:
+        - destination == "みずからきる"
+    order:
+      - file.name
+      - author
+      - subject
+      - pdf
+      - keep
+      - paper
+      - size
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: ゆきさき：スキャンしない
+    filters:
+      and:
+        - destination == "スキャンしない"
+    order:
+      - file.name
+      - author
+      - subject
+      - pdf
+      - keep
+      - paper
+      - size
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: ゆきさき：すてる
+    filters:
+      and:
+        - destination == "すてる"
+    order:
+      - file.name
+      - author
+      - subject
+      - pdf
+      - keep
+      - paper
+      - size
+    sort:
+      - property: file.name
+        direction: ASC
