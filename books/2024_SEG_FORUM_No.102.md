@@ -25,7 +25,7 @@ pdf:
 my_era:
 subject:
   - ほか
-size:
+size: A5
 keep:
 destination:
 paper: きっていない

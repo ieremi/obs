@@ -28,7 +28,7 @@ subject:
   - 物理
 size:
 keep:
-destination:
+destination: スキャン業者
 paper: きっていない
 tags:
   - book

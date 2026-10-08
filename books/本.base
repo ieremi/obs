@@ -73,6 +73,8 @@ views:
       - size
       - formula.amazon
     sort:
+      - property: size
+        direction: ASC
       - property: file.name
         direction: ASC
     columnSize:

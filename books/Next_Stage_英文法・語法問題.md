@@ -27,7 +27,7 @@ pdf:
 my_era:
 subject:
   - 英語
-size:
+size: A5
 keep:
 destination:
 paper: きっていない

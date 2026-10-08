@@ -1,0 +1,39 @@
+---
+name: 新編古典B
+title: 新編古典B
+author:
+label:
+publisher:
+isbn:
+published:
+list_price:
+list_price_unit: JPY
+list_price_tax_included:
+list_price_current:
+list_price_current_unit: JPY
+list_price_current_tax_included:
+amazon_used_price_minimum:
+amazon_used_price_minimum_unit: JPY
+amazon_used_price_minimum_tax_included: true
+amazon_used_price_checked:
+used_available:
+ebook_available:
+unavailable:
+expensive:
+new_available:
+pdf:
+my_era:
+subject:
+  - 古文
+size:
+keep:
+destination:
+paper: きっていない
+tags:
+  - book
+  - book/kobun
+---
+
+# 新編古典B
+
+写真の背から読んだ題名だけ。版・ISBN は未確認。教科書。
