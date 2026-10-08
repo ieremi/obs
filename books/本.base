@@ -1,0 +1,105 @@
+filters:
+  and:
+    - file.hasTag("book")
+formulas:
+  amazon: link("https://www.amazon.co.jp/s?k=" + isbn.replace(/-/g, ""), "Amazon")
+properties:
+  file.name:
+    displayName: ノート
+  title:
+    displayName: タイトル
+  author:
+    displayName: 著者
+  translator:
+    displayName: 訳者
+  label:
+    displayName: レーベル
+  publisher:
+    displayName: 出版社
+  published:
+    displayName: 刊行日
+  list_price:
+    displayName: 定価
+  list_price_current:
+    displayName: 現在の定価
+  amazon_used_price_minimum:
+    displayName: 中古最安値
+  amazon_used_price_checked:
+    displayName: 中古価格の確認日
+  ebook_available:
+    displayName: 電子版
+  unavailable:
+    displayName: うっていない
+  expensive:
+    displayName: たかい
+  cheap:
+    displayName: やすい
+  new_available:
+    displayName: 新品でかえる
+  pdf:
+    displayName: pdf
+  era:
+    displayName: 時代
+  subject:
+    displayName: 科目など
+  size:
+    displayName: サイズ
+  keep:
+    displayName: とっておく？
+  destination:
+    displayName: ゆきさき
+  formula.amazon:
+    displayName: Amazon
+views:
+  - type: table
+    name: すべての本
+    order:
+      - file.name
+      - author
+      - subject
+      - list_price
+      - amazon_used_price_minimum
+      - cheap
+      - expensive
+      - new_available
+      - ebook_available
+      - pdf
+      - era
+      - keep
+      - destination
+      - size
+      - formula.amazon
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: まだきめていない
+    filters:
+      or:
+        - keep.isEmpty()
+        - destination.isEmpty()
+    order:
+      - file.name
+      - cheap
+      - expensive
+      - new_available
+      - ebook_available
+      - pdf
+      - keep
+      - destination
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 新品でかえる
+    filters:
+      and:
+        - new_available == true
+    order:
+      - file.name
+      - list_price_current
+      - amazon_used_price_minimum
+      - ebook_available
+    sort:
+      - property: amazon_used_price_minimum
+        direction: ASC
