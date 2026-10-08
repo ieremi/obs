@@ -1,0 +1,39 @@
+---
+name: 物理I_力学・熱・波動
+title: 物理I（力学・熱・波動）
+author:
+label:
+publisher:
+isbn:
+published:
+list_price:
+list_price_unit: JPY
+list_price_tax_included:
+list_price_current:
+list_price_current_unit: JPY
+list_price_current_tax_included:
+amazon_used_price_minimum:
+amazon_used_price_minimum_unit: JPY
+amazon_used_price_minimum_tax_included: true
+amazon_used_price_checked:
+used_available:
+ebook_available:
+unavailable:
+expensive:
+new_available:
+pdf:
+my_era:
+subject:
+  - 物理
+size:
+keep:
+destination:
+paper: きっていない
+tags:
+  - book
+  - book/physics
+---
+
+# 物理I（力学・熱・波動）
+
+写真の背から読んだ題名だけ。著者・出版社・版は未確認。

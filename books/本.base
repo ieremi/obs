@@ -26,6 +26,8 @@ properties:
     displayName: 中古最安値
   amazon_used_price_checked:
     displayName: 中古価格の確認日
+  used_available:
+    displayName: 中古でかえる
   ebook_available:
     displayName: 電子版
   unavailable:
@@ -59,6 +61,7 @@ views:
       - subject
       - list_price
       - amazon_used_price_minimum
+      - used_available
       - expensive
       - new_available
       - ebook_available
@@ -148,6 +151,23 @@ views:
       - keep
       - paper
       - size
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 中古でもかえない
+    filters:
+      and:
+        - used_available == false
+    order:
+      - file.name
+      - author
+      - subject
+      - publisher
+      - published
+      - pdf
+      - keep
+      - destination
     sort:
       - property: file.name
         direction: ASC
