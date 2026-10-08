@@ -75,24 +75,6 @@ views:
     columnSize:
       note.paper: 113
   - type: table
-    name: まだきめていない
-    filters:
-      or:
-        - keep.isEmpty()
-        - destination.isEmpty()
-    order:
-      - file.name
-      - expensive
-      - new_available
-      - ebook_available
-      - pdf
-      - keep
-      - destination
-      - paper
-    sort:
-      - property: file.name
-        direction: ASC
-  - type: table
     name: 新品でかえる
     filters:
       and:
