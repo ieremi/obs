@@ -1,9 +1,10 @@
 ---
-name: 新日本史B
-title: 新日本史B
+name: TOEIC_TEST英単語_出るとこだけ
+title: TOEIC TEST 英単語 出るとこだけ！
 author:
+  - 小石裕子
 label:
-publisher:
+publisher: アルク
 isbn:
 published:
 list_price:
@@ -24,18 +25,16 @@ new_available:
 pdf:
 my_era:
 subject:
-  - 日本史
+  - 英語
 size:
 keep:
 destination:
 paper: きっていない
 tags:
   - book
-  - book/japanese_history
+  - book/english
 ---
 
-# 新日本史B
+# TOEIC TEST 英単語 出るとこだけ！
 
-写真の背から読んだ題名だけ。著者・出版社・版は未確認。
-
-別の棚にもう 1 冊ある。そちらは数研出版の教科書で、背に尾藤正英・門脇禎二などの名がある。同じ本かは未確認。
+写真の背から読んだ題名だけ。版・ISBN は未確認。

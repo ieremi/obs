@@ -1,9 +1,9 @@
 ---
-name: 新日本史B
-title: 新日本史B
+name: チャート式_基礎と演習_数学III_解答編
+title: チャート式 基礎と演習 数学III 解答編
 author:
 label:
-publisher:
+publisher: 数研出版
 isbn:
 published:
 list_price:
@@ -24,18 +24,16 @@ new_available:
 pdf:
 my_era:
 subject:
-  - 日本史
+  - 数学
 size:
 keep:
 destination:
 paper: きっていない
 tags:
   - book
-  - book/japanese_history
+  - book/math
 ---
 
-# 新日本史B
+# チャート式 基礎と演習 数学III 解答編
 
-写真の背から読んだ題名だけ。著者・出版社・版は未確認。
-
-別の棚にもう 1 冊ある。そちらは数研出版の教科書で、背に尾藤正英・門脇禎二などの名がある。同じ本かは未確認。
+写真の背から読んだ題名だけ。版・ISBN は未確認。黄チャートの別冊解答。
