@@ -1,0 +1,9 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - group == ["作品"]
+    sort:
+      - property: file.name
+        direction: ASC

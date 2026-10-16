@@ -1,0 +1,6 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - 地位 == ["内大臣"]

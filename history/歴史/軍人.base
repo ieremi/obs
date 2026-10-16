@@ -1,0 +1,22 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - 地位 == ["軍人"]
+    order:
+      - file.name
+      - 地位
+      - 年号
+      - 時代
+      - 元号
+      - group
+    sort:
+      - property: 地位
+        direction: DESC
+      - property: 時代
+        direction: ASC
+      - property: group
+        direction: ASC
+  - type: table
+    name: View
