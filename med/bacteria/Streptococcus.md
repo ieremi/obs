@@ -28,9 +28,9 @@ date: 2026-10-20
 | --- | --- | --- |
 | *pneumoniae* | 肺炎の | 名詞の属格 |
 | *pyogenes* | 膿を作る | ギリシア語由来の形容詞 |
-| *agalactiae* | 無乳症の | 名詞の属格 |
+| *agalactiae* | [[無乳症]]の | 名詞の属格 |
 
-*agalactiae* は *a-*「ない」＋乳を表す語に由来する「無乳症」に関わる名前で、新生児だけを意味する名前ではない。
+*agalactiae* は *a-*「ない」＋乳を表す語に由来する「[[無乳症]]」に関わる名前で、新生児だけを意味する名前ではない。
 
 出典：[pneumoniae](https://lpsn.dsmz.de/species/streptococcus-pneumoniae)、[pyogenes](https://lpsn.dsmz.de/species/streptococcus-pyogenes)、[agalactiae](https://lpsn.dsmz.de/species/streptococcus-agalactiae)。
 
@@ -47,7 +47,7 @@ date: 2026-10-20
 | 形・配列 | ランセット状の双球菌が典型 |
 | 溶血 | α溶血 |
 | カタラーゼ | 陰性 |
-| 古典的な鑑別 | オプトヒン感受性、胆汁溶解性 |
+| 古典的な鑑別 | [[オプトヒン]]感受性、胆汁溶解性 |
 | 莢膜 | 多数の血清型があり、病原性・ワクチンと関係 |
 
 α溶血だけでは他のレンサ球菌と区別できない。形態と検査結果を合わせる。[CDC：肺炎球菌同定資料](https://stacks.cdc.gov/view/cdc/11632/cdc_11632_DS1.pdf)
