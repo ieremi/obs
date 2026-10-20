@@ -48,7 +48,7 @@ tags:
 - *Acinetobacter* は男性名詞(*-bacter* で終わる属名は男性として扱う)
 - *baumannii* は**人名の属格**。人名を種小名にするときは、名前をラテン語の第 2 変化名詞 *-ius* にして、その属格 *-ii* を付けるのが一般的(男性の人名の場合)
   - Baumann → *Baumannius* → 属格 *Baumannii* → 種小名 *baumannii*(小文字)
-- [[Escherichia_coli|*Escherichia coli*]] の *coli* と同じく名詞の属格なので、属名の性に合わせて形を変える必要がない
+- [[Escherichia|*Escherichia coli*]] の *coli* と同じく名詞の属格なので、属名の性に合わせて形を変える必要がない
 
 ## 性状
 | 項目 | 内容 |

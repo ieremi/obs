@@ -64,7 +64,7 @@ tags:
 | 奪格 | pylōrō |
 
 - 最初の *pyloridis* は、*pylorus* を第 3 変化の名詞(主格 *-us*、属格 *-idis* の型)のように扱った形で、正しくないとされた。第 2 変化なので属格は *pylori* になる
-- [[Escherichia_coli|*Escherichia coli*]] の *coli*「大腸の」と同じく、臓器の名前の属格を種小名にしたもの
+- [[Escherichia|*Escherichia coli*]] の *coli*「大腸の」と同じく、臓器の名前の属格を種小名にしたもの
 
 ## 性状
 | 項目 | 内容 |

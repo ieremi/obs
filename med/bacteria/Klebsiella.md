@@ -23,9 +23,18 @@ tags:
 
 # *Klebsiella*（クレブシエラ）
 
-**グラム陰性の通性嫌気性桿菌の属**。[[Escherichia_coli|大腸菌]]や[[Enterobacter|エンテロバクター]]と同じ腸内細菌目に属する。
+**グラム陰性の通性嫌気性桿菌の属**。[[Escherichia|大腸菌]]や[[Enterobacter|エンテロバクター]]と同じ腸内細菌目に属する。
 
 代表的な菌種は ***Klebsiella pneumoniae*（肺炎桿菌）**。腸内に保菌されることがあり、肺炎、尿路感染症、血流感染症などの原因になる。[CDC](https://www.cdc.gov/klebsiella/about/)
+
+
+## 名前の由来とラテン語
+
+細菌学者 **Edwin Klebs** にちなみ、*Klebs* にラテン語化した接尾辞 *-iella* を付けた名前。属名は文法上女性。
+
+*pneumoniae* は「肺炎の」を表す名詞の属格で、女性形容詞ではない。名前が肺炎に由来していても、感染部位を肺に限定するものではない。
+
+属名の出典：[LPSN：Klebsiella](https://lpsn.dsmz.de/genus/klebsiella)。語源は命名の由来であり、全菌種・全菌株の性状を保証するものではない。
 
 ## 主な菌種
 
@@ -83,7 +92,7 @@ ESBL産生菌による肺炎など尿路外の感染では、カルバペネム�
 ## 関連
 
 - [[ESBL]]
-- [[Escherichia_coli]]
+- [[Escherichia|大腸菌]]
 - [[Enterobacter]]
 - [[セフトリアキソン]]
 

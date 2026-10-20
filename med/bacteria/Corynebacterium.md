@@ -140,4 +140,4 @@ tags:
 
 ## 関連
 - [[Aeromonas]]: ラテン語の性 (女性名詞の属) と比べる
-- [[Escherichia_coli]]: 名詞の属格の種小名 *coli*
+- [[Escherichia|大腸菌]]: 名詞の属格の種小名 *coli*

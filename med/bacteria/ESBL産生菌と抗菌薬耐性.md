@@ -46,6 +46,6 @@ ESBL産生菌による感染でも、単純性膀胱炎と菌血症を同じ薬�
 ## 関連
 
 - [[ESBL]]：酵素・感染対策・治療の詳細
-- [[Escherichia_coli]]
+- [[Escherichia|大腸菌]]
 - [[Klebsiella]]
 - [[セフトリアキソン]]

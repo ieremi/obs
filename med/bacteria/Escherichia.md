@@ -1,7 +1,10 @@
 ---
-scientific_name: Escherichia coli
-name_ja: 大腸菌
+scientific_name: Escherichia
+name_ja: エシェリキア属
 aliases:
+  - Escherichia_coli
+  - エシェリキア
+  - エシェリキア属
   - Escherichia coli
   - E. coli
   - 大腸菌
@@ -19,7 +22,13 @@ tags:
   - bacteria/gram-negative/enterobacterales
 ---
 
-# *Escherichia coli* (大腸菌)
+# *Escherichia*（エシェリキア属）
+
+グラム陰性の通性嫌気性桿菌の属。代表種は *E. coli*（大腸菌）。**以下は主に大腸菌の詳細**で、属のすべての菌種・菌株に共通するとは限らない。
+
+属名はTheodor Escherichにちなむ。[LPSN：Escherichia](https://lpsn.dsmz.de/genus/escherichia)。
+
+## 大腸菌
 
 ## 概要
 - **グラム陰性の通性嫌気性桿菌**。腸内細菌目細菌 (*Enterobacterales*) の代表

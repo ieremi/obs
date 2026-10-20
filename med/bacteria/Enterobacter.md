@@ -24,7 +24,7 @@ tags:
 # *Enterobacter* (エンテロバクター)
 
 ## 概要
-- **グラム陰性の通性嫌気性桿菌**。[[Escherichia_coli|大腸菌]]と同じ腸内細菌目細菌 (*Enterobacterales*)
+- **グラム陰性の通性嫌気性桿菌**。[[Escherichia|大腸菌]]と同じ腸内細菌目細菌 (*Enterobacterales*)
 - 臨床で最も多いのは ***Enterobacter cloacae* complex**(エンテロバクター・クロアカ複合体)。*E. cloacae*、*E. hormaechei* など、互いによく似た数種をまとめてこう呼ぶ
 - 腸内や環境(水、土、植物)にいる。主に**院内感染**(菌血症、肺炎、尿路感染、術後感染)の原因になる
 - **染色体に誘導型の AmpC β-ラクタマーゼ**をもつのが最大の特徴。そのため、
@@ -59,7 +59,7 @@ tags:
 | 奪格 | cloācā | cloācīs |
 
 - 第 1 変化では、単数属格と複数主格が同じ *-ae* になる。種小名の *cloacae* は「下水の」(単数属格)
-- 名詞の属格なので、男性名詞の属名 *Enterobacter* に合わせて形を変える必要はない([[Escherichia_coli|*Escherichia coli*]] の *coli* と同じ)
+- 名詞の属格なので、男性名詞の属名 *Enterobacter* に合わせて形を変える必要はない([[Escherichia|*Escherichia coli*]] の *coli* と同じ)
 - 人名の *hormaechei* は、名前が母音 -e で終わるので *-i* だけを付けている(子音で終わる名前なら *baumannii* のように *-ii*)
 
 ## 性状
@@ -89,7 +89,7 @@ tags:
 | カルバペネム | AmpC に分解されない | 確実に効く(カルバペネマーゼがなければ) |
 
 - 同じように誘導型 AmpC をもつ菌として、[[Citrobacter|シトロバクター・フロインディ]] (*Citrobacter freundii*)、*Klebsiella aerogenes*、セラチア属 (*Serratia* spp.)、モルガネラ (*Morganella*) などがある。まとめて「SPACE」「HECK-Yes」などの覚え方がある
-- [[Escherichia_coli|大腸菌]]も染色体に AmpC をもつが、AmpR がなく誘導されない
+- [[Escherichia|大腸菌]]も染色体に AmpC をもつが、AmpR がなく誘導されない
 
 ### そのほかの耐性
 - ESBL、プラスミド性の AmpC
@@ -107,6 +107,6 @@ tags:
   - Chow JW, et al. Ann Intern Med. 1991;115(8):585-590. [doi:10.7326/0003-4819-115-8-585](https://doi.org/10.7326/0003-4819-115-8-585)
 
 ## 関連
-- [[Escherichia_coli]]: 同じ腸内細菌目。AmpC をもつが誘導されない
+- [[Escherichia|大腸菌]]: 同じ腸内細菌目。AmpC をもつが誘導されない
 - [[Acinetobacter]]: 同じく院内感染の原因菌
 - [[セファゾリン]]、[[セフメタゾール]]、[[セフトリアキソン]]、[[セフカペン]]、[[ピペラシリン]]、[[タゾバクタム]]

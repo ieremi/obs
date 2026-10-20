@@ -16,7 +16,7 @@ ESBLは酵素の名前であり、これを作る細菌を **ESBL産生菌**と�
 
 ## 主な産生菌
 
-- [[Escherichia_coli|大腸菌]]（*Escherichia coli*）
+- [[Escherichia|大腸菌]]（*Escherichia coli*）
 - [[Klebsiella|肺炎桿菌]]（*Klebsiella pneumoniae*）
 - *Klebsiella oxytoca*
 
@@ -128,7 +128,7 @@ IDSA 2026では、肺炎を含む尿路外のESBL産生菌感染症に **カル�
 
 ## 関連
 
-- [[Escherichia_coli|大腸菌]]
+- [[Escherichia|大腸菌]]
 - [[セフトリアキソン]]
 - [[Klebsiella]]
 

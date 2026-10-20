@@ -57,7 +57,7 @@ tags:
   - ギリシア語の -φιλος → ラテン語の形容詞 *-philus* (男性) / ***-phila*** (女性) / *-philum* (中性)
   - *Aeromonas* は女性なので ***hydrophila***。もとは *Bacillus hydrophilus* (*Bacillus* は男性) とよばれていて、属が変わったときに語尾も変わった
   - 同じように *Pseudomonas aeruginosa* (女性形 -a、「緑青色の」)
-- *caviae* は**名詞の属格** (*Cavia* は第 1 変化名詞、属格 *-ae*)。[[Escherichia_coli|*Escherichia coli*]] の *coli* (「結腸の」) と同じく、属名の性に合わせて変えない
+- *caviae* は**名詞の属格** (*Cavia* は第 1 変化名詞、属格 *-ae*)。[[Escherichia|*Escherichia coli*]] の *coli* (「結腸の」) と同じく、属名の性に合わせて変えない
 - *veronii* は人名の属格 (*-ius* → *-ii*)。[[Acinetobacter]] の *baumannii* と同じ
 - *salmonicida* は「サケを殺すもの」という**名詞の同格**。*-cida* (英語の -cide) は性にかかわらず *-a* のまま
 
@@ -123,6 +123,6 @@ tags:
 ## 関連
 - [[Enterobacter]]、[[Citrobacter]]: 同じく誘導型 AmpC をもつ
 - [[Acinetobacter]]: 同じく水や環境にいる院内感染の原因菌
-- [[Escherichia_coli]]: マッコンキー寒天では似て見えるが、オキシダーゼ陰性
+- [[Escherichia|大腸菌]]: マッコンキー寒天では似て見えるが、オキシダーゼ陰性
 - [[oxidase]]: オキシダーゼ試験
 - [[アンピシリン]]、[[セファゾリン]]、[[セフトリアキソン]]、[[ピペラシリン]]、[[タゾバクタム]]

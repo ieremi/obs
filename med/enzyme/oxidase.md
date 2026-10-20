@@ -109,4 +109,4 @@ $$\mathrm{4\,cyt\,c^{2+} + O_2 + 8H^+_{内} \rightarrow 4\,cyt\,c^{3+} + 2H_2O +
 - [[アロプリノール]]、[[フェブキソスタット]]: キサンチンオキシダーゼ阻害薬
 - [[カテコールアミン]]: MAO で分解される
 - [[プロスタグランジン]]: 作る酵素 COX はオキシゲナーゼ
-- [[Acinetobacter]]、[[Helicobacter]]、[[Enterobacter]]、[[Citrobacter]]、[[Escherichia_coli]]: オキシダーゼ試験の結果
+- [[Acinetobacter]]、[[Helicobacter]]、[[Enterobacter]]、[[Citrobacter]]、[[Escherichia|大腸菌]]: オキシダーゼ試験の結果

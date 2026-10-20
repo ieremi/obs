@@ -53,7 +53,7 @@ tags:
 
 ### ラテン語文法
 - *Campylobacter* は男性名詞 (*-bacter* で終わる属名は男性)。[[Acinetobacter]] と同じ
-- ***jejuni*** と ***coli*** は **名詞の属格** (第 2 変化の中性名詞 *jejunum* → *jejuni*、*colon* → *coli*)。名詞なので属の性に合わせない。[[Escherichia_coli|*Escherichia coli*]] の *coli* とまったく同じ
+- ***jejuni*** と ***coli*** は **名詞の属格** (第 2 変化の中性名詞 *jejunum* → *jejuni*、*colon* → *coli*)。名詞なので属の性に合わせない。[[Escherichia|*Escherichia coli*]] の *coli* とまったく同じ
 - ***fetus*** は **名詞の同格** (主格のまま)。第 4 変化の名詞で、属が変わっても形は変わらない
 - ***upsaliensis*** は *-ensis* の形容詞 (「〜の土地の」)。第 3 変化で、男性・女性は *-ensis*、中性は *-ense*。*Campylobacter* は男性なので *upsaliensis*
 - [[Helicobacter]] の *pylori* (「幽門の」) も同じく名詞の属格で、カンピロバクター属にいたころに *pyloridis* から *pylori* に直された
@@ -110,7 +110,7 @@ tags:
 - 乾燥と熱に弱いが、低温 (冷蔵) では長く生き残る
 
 ## 歴史
-- 1886 年、エシェリヒ (Escherich、ドイツ、[[Escherichia_coli|大腸菌]] の名の由来) が、下痢で死んだ乳児の腸にらせん菌を見たが、培養できなかった
+- 1886 年、エシェリヒ (Escherich、ドイツ、[[Escherichia|大腸菌]] の名の由来) が、下痢で死んだ乳児の腸にらせん菌を見たが、培養できなかった
 - 1913 年、イギリスでヒツジの流産胎児から分けられ、*Vibrio fetus* とよばれた
 - 1972 年、ベルギーのデケイゼルとブツラー (Dekeyser & Butzler) が、フィルターで便から小さな菌をこし分けて培養した。1977 年、イギリスのスキロー (Skirrow) が選択培地を作り、ふつうの検査室でも培養できるようになって、**下痢の主な原因の一つ** だとわかった
 - 1990 年代〜2000 年代、日本の結城伸泰らが、*C. jejuni* のリポオリゴ糖とガングリオシドの分子相同性を示し、GBS を起こすしくみを明らかにした
@@ -125,6 +125,6 @@ tags:
 
 ## 関連
 - [[Helicobacter]]: 同じカンピロバクター目。もとはカンピロバクター属に入れられていた
-- [[Escherichia_coli]]: 種小名 *coli* が同じ (結腸の)
+- [[Escherichia|大腸菌]]: 種小名 *coli* が同じ (結腸の)
 - [[Aeromonas]]: 同じく下痢を起こす、オキシダーゼ陽性のグラム陰性桿菌
 - [[oxidase]]: オキシダーゼ試験
