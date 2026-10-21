@@ -13,14 +13,14 @@ list_price_tax_included:
 list_price_current:
 list_price_current_unit: JPY
 list_price_current_tax_included:
-amazon_used_price_minimum:
+amazon_used_price_minimum: 2000
 amazon_used_price_minimum_unit: JPY
 amazon_used_price_minimum_tax_included: true
-amazon_used_price_checked:
-used_available:
+amazon_used_price_checked: 2026-10-21
+used_available: true
 ebook_available:
 unavailable:
-expensive:
+expensive: true
 new_available:
 pdf:
 my_era:
@@ -46,14 +46,16 @@ tags:
 | レーベル | 大学入試合格V講座 |
 | 出版社 | 学習研究社 |
 | 定価 | 900 JPY |
+| Amazon 中古価格 | 2000 JPY（最安値、送料別、2026-10-21 時点） |
 | ページ数 | 183 |
 | ISBN | 978-4-05-300558-8 |
 | 刊行日 | 1998-05 |
 
 ## メモ
 
-写真の背から特定し、書誌は国立国会図書館サーチで確認した。価格・在庫は未確認。
+写真の背から特定し、書誌は国立国会図書館サーチで確認した。価格は Amazon.co.jp で確認した（2026-10-21）。
 
 ## 出典
 
 - 国立国会図書館サーチ https://ndlsearch.ndl.go.jp/search?cs=bib&f-isbn=9784053005588
+- Amazon.co.jp https://www.amazon.co.jp/dp/4053005582

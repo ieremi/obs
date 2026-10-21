@@ -16,8 +16,8 @@ list_price_current_tax_included:
 amazon_used_price_minimum:
 amazon_used_price_minimum_unit: JPY
 amazon_used_price_minimum_tax_included: true
-amazon_used_price_checked:
-used_available:
+amazon_used_price_checked: 2026-10-21
+used_available: false
 ebook_available:
 unavailable:
 expensive:
@@ -45,14 +45,16 @@ tags:
 | 著者 | 服部晶夫 |
 | 出版社 | 東京書籍 |
 | 定価 | 1457 JPY |
+| Amazon 中古価格 | 出品なし（中古でも手にはいらない、2026-10-21 時点） |
 | ページ数 | 492 |
 | ISBN | 978-4-487-68475-5 |
 | 刊行日 | 2000-02 |
 
 ## メモ
 
-写真の背から特定し、書誌は国立国会図書館サーチで確認した。価格・在庫は未確認。背の副題が「行列・いろいろな曲線」なので2000年版と判断した（2005年版は確率分布も入る）。別の棚にも数学III+Cらしい背が1冊ある。
+写真の背から特定し、書誌は国立国会図書館サーチで確認した。価格は Amazon.co.jp で確認した（2026-10-21）。背の副題が「行列・いろいろな曲線」なので2000年版と判断した（2005年版は確率分布も入る）。別の棚にも数学III+Cらしい背が1冊ある。
 
 ## 出典
 
 - 国立国会図書館サーチ https://ndlsearch.ndl.go.jp/search?cs=bib&f-isbn=9784487684755
+- Amazon.co.jp https://www.amazon.co.jp/dp/4487684757
