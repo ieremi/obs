@@ -5,7 +5,7 @@ author:
   - 西岡康夫
 label:
 publisher:
-isbn:
+isbn: 978-4-342-32086-6
 published:
 list_price:
 list_price_unit: JPY
@@ -13,11 +13,11 @@ list_price_tax_included:
 list_price_current:
 list_price_current_unit: JPY
 list_price_current_tax_included:
-amazon_used_price_minimum:
+amazon_used_price_minimum: 1398
 amazon_used_price_minimum_unit: JPY
 amazon_used_price_minimum_tax_included: true
-amazon_used_price_checked:
-used_available:
+amazon_used_price_checked: 2026-10-21
+used_available: true
 ebook_available:
 unavailable:
 expensive:
@@ -37,4 +37,8 @@ tags:
 
 # 大学入試 最難関大への数学 IA・IIB編
 
-写真の背から読んだ題名と著者だけ。出版社・版・ISBN は未確認。
+写真の背から読んだ題名と著者だけ。出版社・Amazon で見つかった版（ISBN 978-4-342-32086-6）と同じ本と判断した。Amazon 中古価格は 1398 JPY（最安値、送料別、2026-10-21 時点）。
+
+## 出典
+
+- Amazon.co.jp https://www.amazon.co.jp/dp/434232086X
