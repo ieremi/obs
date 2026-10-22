@@ -28,7 +28,7 @@ subject:
   - 数学
 size:
 keep:
-destination:
+destination: みずからきる
 paper:
 tags:
   - book
