@@ -1,0 +1,30 @@
+filters:
+  and:
+    - file.hasTag("都電系統")
+    - 対象年月 == "1958-09"
+properties:
+  file.name:
+    displayName: 系統
+  系統番号:
+    displayName: 系統番号
+  起点:
+    displayName: 起点
+  終点:
+    displayName: 終点
+  停留場数:
+    displayName: 停留場数
+  対象年月:
+    displayName: 対象年月
+views:
+  - type: table
+    name: 戦後最盛期の系統
+    order:
+      - 系統番号
+      - file.name
+      - 起点
+      - 終点
+      - 停留場数
+      - 対象年月
+    sort:
+      - property: 系統番号
+        direction: ASC

@@ -1,0 +1,621 @@
+filters:
+  and:
+    - file.hasTag("都電停留場")
+    - 対象年月 == "1958-09"
+formulas:
+  系統数: 路線.unique().length
+properties:
+  file.name:
+    displayName: 停留場ノート
+  停留場名:
+    displayName: 停留場
+  よみ:
+    displayName: よみ
+  路線:
+    displayName: 通る系統
+  formula.系統数:
+    displayName: 系統数
+  資料表記:
+    displayName: 資料の表記
+views:
+  - type: table
+    name: すべての停留場
+    order:
+      - 停留場名
+      - file.name
+      - よみ
+      - 路線
+      - formula.系統数
+      - 資料表記
+    sort:
+      - property: formula.系統数
+        direction: DESC
+      - property: よみ
+        direction: ASC
+  - type: table
+    name: 乗換・共通停留場
+    filters:
+      and:
+        - formula.系統数 > 1
+    order:
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: formula.系統数
+        direction: DESC
+      - property: よみ
+        direction: ASC
+  - type: table
+    name: 1系統だけの停留場
+    filters:
+      and:
+        - formula.系統数 == 1
+    order:
+      - 停留場名
+      - file.name
+      - 路線
+    sort:
+      - property: よみ
+        direction: ASC
+  - type: table
+    name: 1系統
+    filters:
+      and:
+        - 系統番号.contains(1)
+    order:
+      - 01系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 01系統順
+        direction: ASC
+  - type: table
+    name: 2系統
+    filters:
+      and:
+        - 系統番号.contains(2)
+    order:
+      - 02系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 02系統順
+        direction: ASC
+  - type: table
+    name: 3系統
+    filters:
+      and:
+        - 系統番号.contains(3)
+    order:
+      - 03系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 03系統順
+        direction: ASC
+  - type: table
+    name: 4系統
+    filters:
+      and:
+        - 系統番号.contains(4)
+    order:
+      - 04系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 04系統順
+        direction: ASC
+  - type: table
+    name: 5系統
+    filters:
+      and:
+        - 系統番号.contains(5)
+    order:
+      - 05系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 05系統順
+        direction: ASC
+  - type: table
+    name: 6系統
+    filters:
+      and:
+        - 系統番号.contains(6)
+    order:
+      - 06系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 06系統順
+        direction: ASC
+  - type: table
+    name: 7系統
+    filters:
+      and:
+        - 系統番号.contains(7)
+    order:
+      - 07系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 07系統順
+        direction: ASC
+  - type: table
+    name: 8系統
+    filters:
+      and:
+        - 系統番号.contains(8)
+    order:
+      - 08系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 08系統順
+        direction: ASC
+  - type: table
+    name: 9系統
+    filters:
+      and:
+        - 系統番号.contains(9)
+    order:
+      - 09系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 09系統順
+        direction: ASC
+  - type: table
+    name: 10系統
+    filters:
+      and:
+        - 系統番号.contains(10)
+    order:
+      - 10系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 10系統順
+        direction: ASC
+  - type: table
+    name: 11系統
+    filters:
+      and:
+        - 系統番号.contains(11)
+    order:
+      - 11系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 11系統順
+        direction: ASC
+  - type: table
+    name: 12系統
+    filters:
+      and:
+        - 系統番号.contains(12)
+    order:
+      - 12系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 12系統順
+        direction: ASC
+  - type: table
+    name: 13系統
+    filters:
+      and:
+        - 系統番号.contains(13)
+    order:
+      - 13系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 13系統順
+        direction: ASC
+  - type: table
+    name: 14系統
+    filters:
+      and:
+        - 系統番号.contains(14)
+    order:
+      - 14系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 14系統順
+        direction: ASC
+  - type: table
+    name: 15系統
+    filters:
+      and:
+        - 系統番号.contains(15)
+    order:
+      - 15系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 15系統順
+        direction: ASC
+  - type: table
+    name: 16系統
+    filters:
+      and:
+        - 系統番号.contains(16)
+    order:
+      - 16系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 16系統順
+        direction: ASC
+  - type: table
+    name: 17系統
+    filters:
+      and:
+        - 系統番号.contains(17)
+    order:
+      - 17系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 17系統順
+        direction: ASC
+  - type: table
+    name: 18系統
+    filters:
+      and:
+        - 系統番号.contains(18)
+    order:
+      - 18系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 18系統順
+        direction: ASC
+  - type: table
+    name: 19系統
+    filters:
+      and:
+        - 系統番号.contains(19)
+    order:
+      - 19系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 19系統順
+        direction: ASC
+  - type: table
+    name: 20系統
+    filters:
+      and:
+        - 系統番号.contains(20)
+    order:
+      - 20系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 20系統順
+        direction: ASC
+  - type: table
+    name: 21系統
+    filters:
+      and:
+        - 系統番号.contains(21)
+    order:
+      - 21系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 21系統順
+        direction: ASC
+  - type: table
+    name: 22系統
+    filters:
+      and:
+        - 系統番号.contains(22)
+    order:
+      - 22系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 22系統順
+        direction: ASC
+  - type: table
+    name: 23系統
+    filters:
+      and:
+        - 系統番号.contains(23)
+    order:
+      - 23系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 23系統順
+        direction: ASC
+  - type: table
+    name: 24系統
+    filters:
+      and:
+        - 系統番号.contains(24)
+    order:
+      - 24系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 24系統順
+        direction: ASC
+  - type: table
+    name: 25系統
+    filters:
+      and:
+        - 系統番号.contains(25)
+    order:
+      - 25系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 25系統順
+        direction: ASC
+  - type: table
+    name: 27系統
+    filters:
+      and:
+        - 系統番号.contains(27)
+    order:
+      - 27系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 27系統順
+        direction: ASC
+  - type: table
+    name: 28系統
+    filters:
+      and:
+        - 系統番号.contains(28)
+    order:
+      - 28系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 28系統順
+        direction: ASC
+  - type: table
+    name: 29系統
+    filters:
+      and:
+        - 系統番号.contains(29)
+    order:
+      - 29系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 29系統順
+        direction: ASC
+  - type: table
+    name: 30系統
+    filters:
+      and:
+        - 系統番号.contains(30)
+    order:
+      - 30系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 30系統順
+        direction: ASC
+  - type: table
+    name: 31系統
+    filters:
+      and:
+        - 系統番号.contains(31)
+    order:
+      - 31系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 31系統順
+        direction: ASC
+  - type: table
+    name: 32系統
+    filters:
+      and:
+        - 系統番号.contains(32)
+    order:
+      - 32系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 32系統順
+        direction: ASC
+  - type: table
+    name: 33系統
+    filters:
+      and:
+        - 系統番号.contains(33)
+    order:
+      - 33系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 33系統順
+        direction: ASC
+  - type: table
+    name: 34系統
+    filters:
+      and:
+        - 系統番号.contains(34)
+    order:
+      - 34系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 34系統順
+        direction: ASC
+  - type: table
+    name: 35系統
+    filters:
+      and:
+        - 系統番号.contains(35)
+    order:
+      - 35系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 35系統順
+        direction: ASC
+  - type: table
+    name: 36系統
+    filters:
+      and:
+        - 系統番号.contains(36)
+    order:
+      - 36系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 36系統順
+        direction: ASC
+  - type: table
+    name: 37系統
+    filters:
+      and:
+        - 系統番号.contains(37)
+    order:
+      - 37系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 37系統順
+        direction: ASC
+  - type: table
+    name: 38系統
+    filters:
+      and:
+        - 系統番号.contains(38)
+    order:
+      - 38系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 38系統順
+        direction: ASC
+  - type: table
+    name: 39系統
+    filters:
+      and:
+        - 系統番号.contains(39)
+    order:
+      - 39系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 39系統順
+        direction: ASC
+  - type: table
+    name: 40系統
+    filters:
+      and:
+        - 系統番号.contains(40)
+    order:
+      - 40系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 40系統順
+        direction: ASC
+  - type: table
+    name: 41系統
+    filters:
+      and:
+        - 系統番号.contains(41)
+    order:
+      - 41系統順
+      - 停留場名
+      - file.name
+      - 路線
+      - formula.系統数
+    sort:
+      - property: 41系統順
+        direction: ASC
