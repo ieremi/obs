@@ -1,0 +1,292 @@
+filters:
+  and:
+    - file.hasTag("地下鉄駅")
+    - file.hasTag("東京")
+formulas:
+  路線数: 路線.unique().length
+properties:
+  山手線内:
+    displayName: 山手線内
+  formula.路線数:
+    displayName: 路線数
+  file.name:
+    displayName: 駅
+  よみ:
+    displayName: よみ
+  路線:
+    displayName: 乗り入れ路線
+  駅番号一覧:
+    displayName: 地下鉄の駅番号
+  接続駅:
+    displayName: 別名の接続駅
+  乗換:
+    displayName: 乗換・別駅への接続
+  都営浅草線駅番号:
+    displayName: 都営浅草線駅番号
+  日比谷線駅番号:
+    displayName: 日比谷線駅番号
+  銀座線駅番号:
+    displayName: 銀座線駅番号
+  丸ノ内線駅番号:
+    displayName: 丸ノ内線駅番号
+  東西線駅番号:
+    displayName: 東西線駅番号
+  都営三田線駅番号:
+    displayName: 都営三田線駅番号
+  南北線駅番号:
+    displayName: 南北線駅番号
+  有楽町線駅番号:
+    displayName: 有楽町線駅番号
+  千代田線駅番号:
+    displayName: 千代田線駅番号
+  都営新宿線駅番号:
+    displayName: 都営新宿線駅番号
+  半蔵門線駅番号:
+    displayName: 半蔵門線駅番号
+  都営大江戸線駅番号:
+    displayName: 都営大江戸線駅番号
+  副都心線駅番号:
+    displayName: 副都心線駅番号
+views:
+  - type: table
+    name: すべての駅
+    order:
+      - file.name
+      - よみ
+      - 路線
+      - formula.路線数
+      - 駅番号一覧
+      - 接続駅
+      - 乗換
+    sort:
+      - property: formula.路線数
+        direction: DESC
+      - property: よみ
+        direction: ASC
+  - type: table
+    name: 地下鉄の乗換駅
+    filters:
+      and:
+        - 地下鉄乗換 == true
+    order:
+      - file.name
+      - 路線
+      - formula.路線数
+      - 駅番号一覧
+      - 接続駅
+      - 乗換
+    sort:
+      - property: よみ
+        direction: ASC
+  - type: table
+    name: 都営浅草線
+    filters:
+      and:
+        - 路線.contains("都営浅草線")
+    order:
+      - 都営浅草線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 都営浅草線駅番号
+        direction: ASC
+  - type: table
+    name: 日比谷線
+    filters:
+      and:
+        - 路線.contains("日比谷線")
+    order:
+      - 日比谷線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 日比谷線駅番号
+        direction: ASC
+  - type: table
+    name: 銀座線
+    filters:
+      and:
+        - 路線.contains("銀座線")
+    order:
+      - 銀座線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 銀座線駅番号
+        direction: ASC
+  - type: table
+    name: 丸ノ内線
+    filters:
+      and:
+        - 路線.contains("丸ノ内線")
+    order:
+      - 丸ノ内線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 丸ノ内線駅番号
+        direction: ASC
+  - type: table
+    name: 東西線
+    filters:
+      and:
+        - 路線.contains("東西線")
+    order:
+      - 東西線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 東西線駅番号
+        direction: ASC
+  - type: table
+    name: 都営三田線
+    filters:
+      and:
+        - 路線.contains("都営三田線")
+    order:
+      - 都営三田線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 都営三田線駅番号
+        direction: ASC
+  - type: table
+    name: 南北線
+    filters:
+      and:
+        - 路線.contains("南北線")
+    order:
+      - 南北線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 南北線駅番号
+        direction: ASC
+  - type: table
+    name: 有楽町線
+    filters:
+      and:
+        - 路線.contains("有楽町線")
+    order:
+      - 有楽町線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 有楽町線駅番号
+        direction: ASC
+  - type: table
+    name: 千代田線
+    filters:
+      and:
+        - 路線.contains("千代田線")
+    order:
+      - 千代田線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 千代田線駅番号
+        direction: ASC
+  - type: table
+    name: 都営新宿線
+    filters:
+      and:
+        - 路線.contains("都営新宿線")
+    order:
+      - 都営新宿線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 都営新宿線駅番号
+        direction: ASC
+  - type: table
+    name: 半蔵門線
+    filters:
+      and:
+        - 路線.contains("半蔵門線")
+    order:
+      - 半蔵門線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 半蔵門線駅番号
+        direction: ASC
+  - type: table
+    name: 都営大江戸線
+    filters:
+      and:
+        - 路線.contains("都営大江戸線")
+    order:
+      - 都営大江戸線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 都営大江戸線駅番号
+        direction: ASC
+  - type: table
+    name: 副都心線
+    filters:
+      and:
+        - 路線.contains("副都心線")
+    order:
+      - 副都心線駅番号
+      - file.name
+      - 路線
+      - formula.路線数
+      - 接続駅
+      - 乗換
+    sort:
+      - property: 副都心線駅番号
+        direction: ASC
+  - type: table
+    name: 山手線内・1路線
+    filters:
+      and:
+        - 山手線内 == true
+        - formula.路線数 == 1
+    order:
+      - file.name
+      - よみ
+      - 路線
+      - formula.路線数
+      - 駅番号一覧
+      - 接続駅
+      - 乗換
+    sort:
+      - property: よみ
+        direction: ASC

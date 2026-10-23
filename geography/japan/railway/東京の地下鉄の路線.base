@@ -1,0 +1,33 @@
+filters:
+  and:
+    - file.hasTag("地下鉄路線")
+    - file.hasTag("東京")
+properties:
+  file.name:
+    displayName: 路線
+  都市計画路線番号:
+    displayName: 号線
+  事業者:
+    displayName: 事業者
+  路線記号:
+    displayName: 路線記号
+  起点:
+    displayName: 起点
+  終点:
+    displayName: 終点
+  駅数:
+    displayName: 駅数
+views:
+  - type: table
+    name: 路線一覧
+    order:
+      - 都市計画路線番号
+      - file.name
+      - 事業者
+      - 路線記号
+      - 起点
+      - 終点
+      - 駅数
+    sort:
+      - property: 都市計画路線番号
+        direction: ASC
