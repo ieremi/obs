@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="780" viewBox="0 0 1120 780" role="img" aria-labelledby="title desc">
+<title id="title">桜丘町の再開発前後：動線と街区の変化</title>
+<desc id="desc">左に再開発前、右に再開発後を示す概念図。国道246号とJR線による移動の障壁に対し、再開発後はサクラステージ、新南改札、ストリーム側を結ぶ通路と上下移動設備が加わった。下段で小規模街区から複合街区への変化を比較する。実測地図ではない。</desc>
+<defs>
+  <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto-start-reverse"><path d="M0 0L6 3L0 6Z" fill="#2563a6"/></marker>
+  <pattern id="rail" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0 8H16" stroke="#a0a7ae" stroke-width="2"/></pattern>
+</defs>
+<rect width="1120" height="780" fill="#f7f8fa" rx="20"/>
+<g font-family="sans-serif" fill="#25364b">
+  <text x="36" y="45" font-size="27" font-weight="bold">桜丘町はどう変わったか</text>
+  <text x="36" y="76" font-size="17">駅への接続改善と、駅前の小規模街区から大型複合街区への更新</text>
+  <rect x="28" y="98" width="520" height="435" rx="14" fill="#ffffff" stroke="#ccd3db"/>
+  <rect x="572" y="98" width="520" height="435" rx="14" fill="#ffffff" stroke="#ccd3db"/>
+  <text x="52" y="132" font-size="23" font-weight="bold">再開発前</text>
+  <text x="596" y="132" font-size="23" font-weight="bold">再開発後（2023〜2024年の整備）</text>
+  <g fill="#e4e7eb">
+    <rect x="48" y="213" width="480" height="37"/>
+    <rect x="592" y="213" width="480" height="37"/>
+    <rect x="355" y="155" width="34" height="315"/>
+    <rect x="899" y="155" width="34" height="315"/>
+  </g>
+  <rect x="355" y="155" width="34" height="315" fill="url(#rail)"/>
+  <rect x="899" y="155" width="34" height="315" fill="url(#rail)"/>
+  <g font-size="16">
+    <text x="64" y="238">国道246号</text><text x="608" y="238">国道246号</text>
+    <text x="370" y="492" text-anchor="middle">JR線</text><text x="916" y="492" text-anchor="middle">JR線</text>
+    <text x="423" y="401" text-anchor="middle">渋谷三丁目</text>
+    <text x="423" y="425" text-anchor="middle">方面</text>
+    <text x="1004" y="359" text-anchor="middle">ストリーム</text>
+    <text x="1004" y="383" text-anchor="middle">渋谷三丁目側</text>
+  </g>
+  <rect x="267" y="162" width="78" height="38" rx="6" fill="#dce8f5"/>
+  <text x="306" y="188" text-anchor="middle" font-size="17">駅方面</text>
+  <rect x="811" y="162" width="78" height="38" rx="6" fill="#dce8f5"/>
+  <text x="850" y="188" text-anchor="middle" font-size="17">駅方面</text>
+  <text x="74" y="295" font-size="24" font-weight="bold">桜丘町</text>
+  <g fill="#eef0f3" stroke="#919ba8" stroke-width="1.5">
+    <rect x="73" y="315" width="61" height="42"/><rect x="145" y="315" width="74" height="42"/>
+    <rect x="230" y="315" width="63" height="42"/><rect x="73" y="372" width="89" height="40"/>
+    <rect x="176" y="372" width="49" height="40"/><rect x="239" y="372" width="54" height="40"/>
+  </g>
+  <text x="74" y="441" font-size="16">小規模な店・事務所・住宅</text>
+  <text x="74" y="466" font-size="16">細街路と坂に沿う街並み</text>
+  <text x="74" y="511" font-size="17" fill="#596575">駅は近いが、道路・線路・坂が障壁</text>
+  <rect x="620" y="273" width="248" height="150" rx="9" fill="#e2ecf7" stroke="#2563a6" stroke-width="2"/>
+  <text x="744" y="304" font-size="22" font-weight="bold" text-anchor="middle">サクラステージ</text>
+  <text x="744" y="331" font-size="16" text-anchor="middle">商業・オフィス・住宅など</text>
+  <path d="M864 349H970" stroke="#2563a6" stroke-width="6" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="873" y="280" width="87" height="41" rx="6" fill="#2563a6"/>
+  <text x="916" y="306" fill="#ffffff" font-size="16" text-anchor="middle">新南改札</text>
+  <path d="M916 322V343" stroke="#2563a6" stroke-width="3"/>
+  <text x="744" y="369" font-size="16" text-anchor="middle">デッキ＋上下移動設備</text>
+  <path d="M744 380V400" stroke="#2563a6" stroke-width="3" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="745" y="450" font-size="17" text-anchor="middle">周辺の桜丘町へ</text>
+  <text x="600" y="511" font-size="17" fill="#1d528c">改札へ接続し、線路の東西も結ぶ</text>
+  <text x="48" y="573" font-size="21" font-weight="bold">街の使い方も変化</text>
+  <rect x="48" y="591" width="480" height="98" rx="10" fill="#eceff3"/>
+  <rect x="592" y="591" width="480" height="98" rx="10" fill="#e2ecf7"/>
+  <g font-size="18">
+    <text x="68" y="622">路地・個々のビルの入口へ</text>
+    <text x="68" y="651">小さな店が連なる風景</text>
+    <text x="612" y="622">広場・デッキ・共用通路を経て各施設へ</text>
+    <text x="612" y="651">大型複合施設と、周辺の街が併存</text>
+  </g>
+  <text x="48" y="721" font-size="16">概念図：縮尺・形状・各通路の位置や階数は省略。桜丘町全体が建て替わったわけではありません。</text>
+  <text x="48" y="750" font-size="15" fill="#596575">出典：渋谷区の地区計画・歩行者動線資料、JR東日本の2024年新南改札移転発表（本文参照）</text>
+</g>
+</svg>
