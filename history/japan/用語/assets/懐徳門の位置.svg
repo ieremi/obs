@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" role="img" aria-labelledby="title desc">
+  <title id="title">懐徳門と総合研究博物館の位置関係</title>
+  <desc id="desc">北を上とした略図。本郷通りから東側の懐徳門に入り、右手の南側に総合研究博物館がある。距離や建物の形は模式的に表している。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#2563a6" stroke-width="2"/></marker></defs>
+  <rect width="880" height="560" rx="20" fill="#f7f8fa"/>
+  <g font-family="sans-serif" fill="#263c46">
+    <text x="36" y="48" font-size="26" font-weight="bold">懐徳門の位置</text>
+    <text x="36" y="78" font-size="16">東京大学 本郷キャンパス南西部</text>
+    <rect x="300" y="105" width="540" height="375" rx="16" fill="#e5edf5"/>
+    <text x="560" y="143" font-size="21" text-anchor="middle">東京大学 構内</text>
+    <rect x="150" y="105" width="90" height="375" fill="#e0e4e6"/>
+    <path d="M195 115V465" stroke="white" stroke-width="3" stroke-dasharray="14 12"/>
+    <text x="115" y="285" font-size="21" text-anchor="middle" writing-mode="tb">本郷通り</text>
+    <path d="M300 110V225 M300 295V470" stroke="#8293a3" stroke-width="5"/>
+    <path d="M240 260H790" stroke="#ffffff" stroke-width="42"/>
+    <rect x="287" y="222" width="26" height="18" rx="3" fill="#466b94"/>
+    <rect x="287" y="280" width="26" height="18" rx="3" fill="#466b94"/>
+    <circle cx="300" cy="260" r="13" fill="#2563a6" stroke="white" stroke-width="3"/>
+    <path d="M320 205L305 241" stroke="#2563a6" stroke-width="2"/>
+    <text x="325" y="195" font-size="25" font-weight="bold" fill="#1d528c">懐徳門</text>
+    <text x="325" y="219" font-size="15">2007年新設</text>
+    <rect x="430" y="315" width="335" height="130" rx="10" fill="#fff" stroke="#597685" stroke-width="2"/>
+    <text x="597" y="373" text-anchor="middle" font-size="24" font-weight="bold">総合研究博物館</text>
+    <text x="597" y="405" text-anchor="middle" font-size="17">門を入って右手正面</text>
+    <path d="M250 260H465Q500 260 500 295V315" stroke="#2563a6" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+    <g transform="translate(790 180)"><path d="M0 28V-16M-7-4L0-18L7-4" stroke="#263c46" stroke-width="3" fill="none"/><text x="0" y="-30" text-anchor="middle" font-size="18">北</text></g>
+    <text x="36" y="515" font-size="16">位置関係の略図（縮尺・建物形状・道路の角度は実際と異なります）</text>
+    <text x="36" y="540" font-size="14" fill="#596a70">東京大学総合研究博物館のアクセス案内をもとに作図</text>
+  </g>
+</svg>
