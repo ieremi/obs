@@ -1,0 +1,96 @@
+filters:
+  and:
+    - file.inFolder("japanese/漢字")
+    - file.ext == "md"
+properties:
+  file.name:
+    displayName: ノート
+  字:
+    displayName: 字
+  音読み:
+    displayName: 音読み
+  訓読み:
+    displayName: 訓読み
+  部首:
+    displayName: 部首
+  総画数:
+    displayName: 画数
+  倉頡:
+    displayName: 倉頡
+  倉頡コード:
+    displayName: 倉頡コード
+  Unicode:
+    displayName: Unicode
+  区分:
+    displayName: 区分
+  成り立ち:
+    displayName: 成り立ち
+views:
+  - type: table
+    name: すべての漢字
+    order:
+      - file.name
+      - 音読み
+      - 訓読み
+      - 部首
+      - 総画数
+      - 倉頡
+      - 倉頡コード
+      - 区分
+      - 成り立ち
+      - Unicode
+    sort:
+      - property: 総画数
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 部首順
+    groupBy:
+      property: 部首
+      direction: ASC
+    order:
+      - file.name
+      - 部首
+      - 総画数
+      - 音読み
+      - 訓読み
+    sort:
+      - property: 総画数
+        direction: ASC
+  - type: table
+    name: 倉頡順
+    order:
+      - file.name
+      - 倉頡コード
+      - 倉頡
+      - 音読み
+    sort:
+      - property: 倉頡コード
+        direction: ASC
+  - type: table
+    name: 常用漢字
+    filters:
+      and:
+        - 区分 == "常用漢字"
+    order:
+      - file.name
+      - 音読み
+      - 訓読み
+      - 総画数
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 表外漢字
+    filters:
+      and:
+        - 区分 == "表外漢字"
+    order:
+      - file.name
+      - 音読み
+      - 訓読み
+      - 総画数
+    sort:
+      - property: file.name
+        direction: ASC
