@@ -104,6 +104,9 @@ zzkj 漢字
 zzrb 壇嗇
 ```
 
+- **フォルダの名前は変えられない**。`<名前>` は、入力メソッドの設定ファイルの名前（`inputmethod/cangjie5.conf` の `cangjie5`）で決まる。fcitx5 は、その名前から `table/cangjie5.dict.d` を作って探すので、ほかの名前のフォルダは読まれない（ソースの `TableIME::requestDict(name)` で、`inputmethod/<name>.conf` と `table/<name>.dict.d` に同じ `name` を使っている）
+- **フォルダの中のファイルの名前は自由**。終わりが `.txt` か `.dict` であればよい（`my.txt`、`kanji.dict` など）。いくつ置いてもよい
+- 別の名前のフォルダにしたいなら、入力メソッドそのものを別の名前で作る。たとえば `~/.local/share/fcitx5/inputmethod/mycangjie.conf` に、`cangjie5.conf` を写して `Name` を変え、`File=table/cangjie5.main.dict` はそのままにする。すると `table/mycangjie.dict.d` が読まれる。もとの倉頡とは別の入力メソッドとして、設定画面に出る（ユーザー辞書や設定の上書きも `mycangjie` の名前で別になる）
 - 1 行に「コード 字（または語）」。ヘッダー（`KeyCode=` など）は要らない
 - もとの辞書と同じコードにすると、候補の窓にいっしょに並ぶ。かぶらないコードにすると、その字だけがすぐ出る
 - `.txt` はそのまま読まれる。項目が多いときは、変換して `.dict` にすると読みこみが速い：
