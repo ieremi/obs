@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1100" viewBox="0 0 1100 1100" role="img" aria-labelledby="title desc">
+<title id="title">3F美術室 エアコン交換前後の正面・側面寸法比較</title>
+<desc id="desc">灰色破線は旧日立、青色は新パナソニック。室内機は幅と高さが同じで奥行80mm減。室外機は幅144mm、高さ90mm、奥行24mm減。本体寸法の同一縮尺比較。</desc>
+<rect width="1100" height="1100" fill="#fff"/>
+<style>text{font-family: sans-serif;fill:#172b43}.h{font-size:26px;font-weight:bold}.sub{font-size:18px}.label{font-size:17px}.old{fill:#64748b;fill-opacity:.08;stroke:#64748b;stroke-width:3;stroke-dasharray:9 6}.new{fill:#0ea5e9;fill-opacity:.16;stroke:#0284c7;stroke-width:3}</style>
+<text x="40" y="44" class="h">3F 美術室｜エアコンの大きさの変化</text>
+<text x="40" y="78" class="sub">旧：日立 RAS-ZC40D2 ／ 新：Panasonic CS-366DEX-W</text>
+<path d="M40 108h55" stroke="#64748b" stroke-width="3" stroke-dasharray="9 6"/>
+<path d="M390 108h55" stroke="#0284c7" stroke-width="3"/>
+<text x="105" y="114" class="label">旧：灰色の破線</text>
+<text x="455" y="114" class="label">新：青色の実線</text>
+<text x="40" y="150" class="label">全図同一縮尺：1 mm = 0.55図内単位。突起・配管・据付余白は含めない。</text>
+<text x="40" y="190" class="h">室内機</text>
+<text x="100" y="225" class="sub">正面（幅 × 高さ）</text>
+<text x="710" y="225" class="sub">側面（奥行 × 高さ）</text>
+<rect x="100" y="245" width="438.90000000000003" height="162.25" class="old"/>
+<rect x="100" y="245" width="438.90000000000003" height="162.25" class="new"/>
+<text x="100" y="434.25" class="label">旧 798 × 295 mm</text>
+<text x="100" y="459.25" class="label">新 798 × 295 mm</text>
+<rect x="710" y="245" width="180.95000000000002" height="162.25" class="old"/>
+<rect x="710" y="245" width="136.95000000000002" height="162.25" class="new"/>
+<text x="710" y="434.25" class="label">旧 329 × 295 mm</text>
+<text x="710" y="459.25" class="label">新 249 × 295 mm</text>
+<text x="100" y="487.25" class="label">幅・高さ：変化なし</text>
+<text x="710" y="487.25" class="label">奥行：−80 mm（−8 cm）</text>
+<g transform="translate(0 60)"><text x="40" y="480" class="h">室外機</text>
+<text x="100" y="515" class="sub">正面（幅 × 高さ）</text>
+<text x="710" y="515" class="sub">側面（奥行 × 高さ）</text>
+<rect x="100" y="535" width="439.45000000000005" height="345.95000000000005" class="old"/>
+<rect x="100" y="584.5" width="360.25000000000006" height="296.45000000000005" class="new"/>
+<text x="100" y="907.95" class="label">旧 799 × 629 mm</text>
+<text x="100" y="932.95" class="label">新 655 × 539 mm</text>
+<rect x="710" y="535" width="164.45000000000002" height="345.95000000000005" class="old"/>
+<rect x="710" y="584.5" width="151.25" height="296.45000000000005" class="new"/>
+<text x="710" y="907.95" class="label">旧 299 × 629 mm</text>
+<text x="710" y="932.95" class="label">新 275 × 539 mm</text>
+<text x="100" y="960.95" class="label">幅 −144 mm ／ 高さ −90 mm</text>
+<text x="710" y="960.95" class="label">奥行：−24 mm（−2.4 cm）</text>
+</g></svg>
