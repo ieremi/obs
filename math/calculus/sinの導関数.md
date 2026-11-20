@@ -201,3 +201,7 @@ $$
 | 項別微分 | term-by-term differentiation |
 | オイラーの公式 | Euler's formula |
 | 循環論法 | circular reasoning |
+
+## 関連
+- [[sin 1の求め方]]
+- [[高校数学の定理一覧]]
