@@ -19,6 +19,10 @@ body.theme-dark {
   --background-modifier-border: #323b3e;
   --background-modifier-hover: #89929633;
   --background-modifier-active-hover: #40484b66;
+  --background-modifier-form-field: #252d30;
+  --background-modifier-form-field-highlighted: #293235;
+  --background-modifier-border-hover: #40484b;
+  --ohohama-user-message-border: #0b8bee99;
   --text-normal: #E6EDF9;
   --text-muted: #a4adb0;
   --text-faint: #899296;
@@ -85,6 +89,7 @@ body.theme-light {
   --background-modifier-active-hover: #0b8bee24;
   --background-modifier-form-field: #e7eff3;
   --background-modifier-form-field-highlighted: #ecf5f9;
+  --ohohama-user-message-border: #0b8bee80;
   --text-normal: #21292c;
   --text-muted: #526671;
   --text-faint: #8296a2;
@@ -479,6 +484,11 @@ body .grimoire-tool-step.is-blocked .grimoire-tool-icon-tile {
    descenders of Noto Sans CJK JP; give the label room */
 body .grimoire-model-label {
   line-height: 1.4;
+}
+
+/* Grimoire: outline your own messages so they stand out a little from the replies */
+body .grimoire-message-user {
+  box-shadow: inset 0 0 0 1px var(--ohohama-user-message-border);
 }
 
 /* Spell check underline: Ohohama blue instead of red */
