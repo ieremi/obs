@@ -1,5 +1,5 @@
-/* Ohohama（VS Code のテーマ）に合わせた Obsidian の見た目。Settings → Appearance → CSS snippets でオンにする
-   github.com/ieremi/ohohama の obsidian/ から生成。直接は編集しない */
+/* Obsidian look matching the Ohohama VS Code theme. Enable it under Settings → Appearance → CSS snippets.
+   Generated from obsidian/ in github.com/ieremi/ohohama. Do not edit directly. */
 
 body.theme-dark,
 body.theme-light {
@@ -12,11 +12,11 @@ body.theme-light {
 }
 
 body.theme-dark {
-  --background-primary: #080D10;
-  --background-primary-alt: #0a1215;
-  --background-secondary: #080D10;
-  --background-secondary-alt: #0a1215;
-  --background-modifier-border: #1b2326;
+  --background-primary: #1d2528;
+  --background-primary-alt: #232b2e;
+  --background-secondary: #1d2528;
+  --background-secondary-alt: #232b2e;
+  --background-modifier-border: #323b3e;
   --background-modifier-hover: #89929633;
   --background-modifier-active-hover: #40484b66;
   --text-normal: #E6EDF9;
@@ -38,7 +38,7 @@ body.theme-dark {
   --code-function: #4cb6e9;
   --code-value: #0097ed;
   --blockquote-border-color: #0B8BEE;
-  --table-header-background: #0f171a;
+  --table-header-background: #252d30;
   --scrollbar-thumb-bg: #b1ebff4d;
   --ohohama-heading: #E6EDF9;
   --ohohama-heading-accent: #57b1ff;
@@ -144,12 +144,12 @@ body.theme-light {
 }
 
 body {
-  /* フォント：Ubuntu に入っている Noto CJK を使う */
+  /* Fonts: use the Noto CJK fonts shipped with Ubuntu */
   --font-text-theme: "Noto Sans CJK JP", sans-serif;
   --font-interface-theme: "Noto Sans CJK JP", sans-serif;
   --font-monospace-theme: "Hack Nerd Font Mono", "Noto Sans Mono CJK JP", monospace;
 
-  /* 行間と本文の幅 */
+  /* Line height and readable line width */
   --line-height-normal: 1.8;
   --file-line-width: 48rem;
 }
@@ -162,10 +162,10 @@ body {
   background-color: var(--table-header-background);
 }
 
-/* 見出し：モダンに
-   - 大きさの差をはっきり、字間を少しつめる、上の余白を広く
-   - h1・h2 は本文と同じ色で太く。h2 だけ左に青い縦の帯
-   - h3 は青、h4 以下は小さくうすいグレー */
+/* Headings:
+   - clear size steps, slightly tighter letter spacing, more space above
+   - h1 and h2 bold in the body text color; h2 has a blue bar on the left
+   - h3 blue; h4 and below small and in a light gray */
 body.theme-dark,
 body.theme-light {
   --h1-size: 2em;
@@ -192,7 +192,7 @@ body.theme-light {
   --heading-spacing: 2.2em;
 }
 
-/* h1：うすい青の角丸の帯＋1 文字目の後ろに水色の円 */
+/* h1: pale blue rounded band with a light blue circle behind the first letter */
 .markdown-rendered h1,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 {
   position: relative;
@@ -220,14 +220,14 @@ body.theme-light {
   pointer-events: none;
 }
 
-/* h1・h2 のあとに、すきまをあける */
+/* Space after h1 and h2 */
 .markdown-rendered h1 {
   margin-bottom: 1.6em;
 }
 .markdown-rendered h2 {
   margin-bottom: 1.3em;
 }
-/* 編集の画面では、行に margin をつけるとずれるので、次の行の上に padding をつける */
+/* In the editor, margins on lines break positioning, so pad the next line instead */
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 + .cm-line {
   padding-top: 1.3em;
 }
@@ -237,7 +237,7 @@ body.theme-light {
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 + .cm-line {
   padding-top: 1.3em !important;
 }
-/* 見出しのすぐ次に（空の行なしで）リストや表が来ても、すきまが出るように */
+/* Keep the space even when a list or table follows a heading without a blank line */
 .markdown-rendered h1 + :is(p, ul, ol, table, pre, blockquote, div),
 .markdown-rendered div:has(> h1) + div > :first-child {
   margin-top: 1.6em !important;
@@ -247,7 +247,7 @@ body.theme-light {
   margin-top: 1.3em !important;
 }
 
-/* h2：左に太い縦の線＋斜めのしま模様の背景 */
+/* h2: thick bar on the left and a diagonal stripe background */
 .markdown-rendered h2,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2 {
   --h2-color: var(--ohohama-h2-text);
@@ -264,7 +264,7 @@ body.theme-light {
   letter-spacing: 0.02em;
 }
 
-/* h3：文字の長さだけの、丸い「ピル」（読む画面）。編集の画面では行いっぱいの角丸 */
+/* h3: a pill as wide as the text in reading view; a full-width rounded line in the editor */
 .markdown-rendered h3 {
   display: inline-block;
   padding: 0.15em 0.9em;
@@ -279,7 +279,7 @@ body.theme-light {
   background-color: var(--ohohama-h3-bg);
 }
 
-/* h4：前に小さな丸い点 */
+/* h4: small dot before the text */
 .markdown-rendered h4::before {
   content: "";
   display: inline-block;
@@ -291,14 +291,14 @@ body.theme-light {
   vertical-align: 0.15em;
 }
 
-/* h4〜h6：小さく、字間を少し広げる */
+/* h4 to h6: small, with slightly wider letter spacing */
 .markdown-rendered h4,
 .markdown-rendered h5,
 .markdown-rendered h6 {
   letter-spacing: 0.04em;
 }
 
-/* 表：このボールトは表が多いので、少し小さく、見出し行に色を */
+/* Tables: this vault has many, so make them slightly smaller and color the header row */
 .markdown-rendered table {
   font-size: 0.92em;
   line-height: 1.6;
@@ -311,17 +311,17 @@ body.theme-light {
   padding: 0.35em 0.7em;
 }
 
-/* 引用（条文・史料など） */
+/* Blockquotes (statutes, sources, etc.) */
 .markdown-rendered blockquote {
   font-size: 0.95em;
 }
 
-/* インラインのコードを日本語の中で目立ちすぎないように */
+/* Keep inline code from standing out too much in Japanese text */
 .markdown-rendered :not(pre) > code {
   font-size: 0.9em;
 }
 
-/* コールアウトの種類ごとに、色をわりあてる */
+/* Assign a color to each callout type */
 .callout[data-callout="note"], .callout[data-callout="info"], .callout[data-callout="todo"] {
   --callout-color: var(--callout-note);
 }
@@ -349,7 +349,7 @@ body.theme-light {
   --callout-color: var(--callout-summary);
 }
 
-/* Git プラグイン（obsidian-git）：プラグインが var(--color-green / yellow / red / orange) を使う所だけ、青に置きかえる */
+/* Git plugin (obsidian-git): replace var(--color-green / yellow / red / orange) with blues only where the plugin uses them */
 .git-tools,
 .git-diff,
 .git-split-diff-view,
@@ -367,7 +367,7 @@ body.theme-light {
   --color-purple: var(--ohohama-git-change);
 }
 
-/* 変更の一覧の、ファイルの横の文字（M はもとオレンジ、D はもと赤） */
+/* Status letters next to files in the changes list (M was orange, D was red) */
 .git-tools .type { color: var(--text-muted); }
 .git-tools .type[data-type="M"] { color: var(--ohohama-git-change); }
 .git-tools .type[data-type="D"] { color: var(--ohohama-git-delete); }
@@ -377,7 +377,7 @@ body.theme-light {
 .git-tools .type[data-type="R"],
 .git-tools .type[data-type="C"] { color: var(--ohohama-git-change); }
 
-/* 差分の画面（diff2html）の色 */
+/* Diff view (diff2html) colors */
 .theme-dark,
 .theme-light {
   --git-delete-bg: rgba(var(--ohohama-git-delete-rgb), 0.18);
@@ -389,7 +389,7 @@ body.theme-light {
   --git-change: var(--ohohama-git-change);
 }
 
-/* 左右に並べる差分（CodeMirror の merge view） */
+/* Side-by-side diff (CodeMirror merge view) */
 .git-split-diff-view .cm-deletedLine,
 .git-unified-diff-view .cm-deletedChunk {
   background-color: rgba(var(--ohohama-git-delete-rgb), 0.12);
@@ -407,7 +407,7 @@ body.theme-light {
   background-color: rgba(var(--ohohama-git-add-rgb), 0.3);
 }
 
-/* スペルチェックの波線：赤をやめて、Ohohama の青にする */
+/* Spell check underline: Ohohama blue instead of red */
 ::spelling-error {
   text-decoration: underline wavy var(--interactive-accent);
   text-decoration-thickness: 1px;
