@@ -102,6 +102,23 @@ Google の Antigravity を Obsidian から使うプラグインは 2 つある�
 - `agy` の入れ方は、どちらのプラグインのページにも書かれていない。Google の Antigravity の公式の案内で入れ、端末で `agy` を一度起動してログインし、`agy --version` と `agy models` で確かめる
 - プラグインが `agy` をさがす場所：`~/.local/bin/agy`、`/usr/local/bin/agy` など。見つからなければ、設定にパスを入れる
 
+### Ubuntu に agy を入れる
+
+[Google の公式手順](https://antigravity.google/docs/getting-started?tab=cli)では、端末で次を実行する。
+
+```sh
+curl -fsSL https://antigravity.google/cli/install.sh | bash
+```
+
+既定のインストール先は `~/.local/bin/agy`。新しい端末を開き、次で確認する。
+
+```sh
+agy --version
+agy
+```
+
+初回起動時の案内に従って設定し、求められたらGoogleアカウントでログインする。`agy` が見つからない場合は `~/.local/bin/agy --version` を試し、動くなら `~/.local/bin` をPATHに追加する。Obsidianのプラグインから見つからない場合は、プラグイン設定に `/home/ieremius/.local/bin/agy` を指定する。
+
 ## 3. Obsidian の外から使う（いまのやり方）
 いま VS Code の横で使っている **Claude Code・ChatGPT（Codex）・Antigravity の拡張機能** は、ボールトのフォルダーを開けば、ノートを直接読み書きできる。Obsidian のノートはただの Markdown のファイルなので、**Obsidian の中に入れなくても、外からで十分なことが多い**。
 
