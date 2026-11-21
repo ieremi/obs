@@ -5,6 +5,7 @@
 .agents/skills/
 .claude/skills/
 .copilot/
+/copilot/copilot-conversations/agent__*.md
 */.obsidian/workspace.json
 */.obsidian/workspace-mobile.json
 .trash/
