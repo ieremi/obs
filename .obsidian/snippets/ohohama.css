@@ -1,0 +1,183 @@
+/* Ohohama（VS Code のテーマ）に合わせた Obsidian の見た目。Settings → Appearance → CSS snippets でオンにする */
+
+body {
+  /* フォント：Ubuntu に入っている Noto CJK を使う */
+  --font-text-theme: "Noto Sans CJK JP", sans-serif;
+  --font-interface-theme: "Noto Sans CJK JP", sans-serif;
+  --font-monospace-theme: "Hack Nerd Font Mono", "Noto Sans Mono CJK JP", monospace;
+
+  /* 行間と本文の幅 */
+  --line-height-normal: 1.8;
+  --file-line-width: 48rem;
+}
+
+/* 色：ライトグレーと #0B8BEE（hsl 206 91% 49%）でまとめる */
+body.theme-light,
+body.theme-dark {
+  --accent-h: 206;
+  --accent-s: 91%;
+  --accent-l: 49%;
+}
+
+body.theme-light {
+  /* 背景：ライトグレーの濃さちがい */
+  --background-primary: #ECEEF1;
+  --background-primary-alt: #E4E7EB;
+  --background-secondary: #E1E5EA;
+  --background-secondary-alt: #D7DCE2;
+  --background-modifier-border: #C8CED6;
+  --background-modifier-hover: rgba(11, 139, 238, 0.08);
+  --background-modifier-active-hover: rgba(11, 139, 238, 0.14);
+
+  /* 文字：濃いグレー。リンクは #0B8BEE を少し暗くして読みやすく（背景とのコントラスト 5.1:1） */
+  --text-normal: #222831;
+  --text-muted: #5B6573;
+  --text-faint: #8A94A2;
+  --text-accent: #0966B0;
+  --text-accent-hover: #0B8BEE;
+  --text-selection: rgba(11, 139, 238, 0.22);
+  --interactive-accent: #0B8BEE;
+  --interactive-accent-hover: #0A7AD2;
+
+  --code-background: #E1E5EA;
+  --blockquote-border-color: #0B8BEE;
+  --table-header-background: #DAE0E7;
+  --h1-color: #0B8BEE;
+}
+
+/* ダーク：VS Code の Ohohama テーマ（github.com/ieremi/ohohama）に合わせる */
+body.theme-dark {
+  /* 背景：Ohohama の black。サイドバーも同じ色で、線はほとんど見せない */
+  --background-primary: #080D10;
+  --background-primary-alt: #0C1216;
+  --background-secondary: #080D10;
+  --background-secondary-alt: #0C1216;
+  --background-modifier-border: #1A2327;
+  --background-modifier-hover: rgba(137, 146, 150, 0.2);
+  --background-modifier-active-hover: rgba(64, 72, 75, 0.4);
+
+  /* 文字：Ohohama の white と neutral のグレー */
+  --text-normal: #E6EDF9;
+  --text-muted: #A4ADB0;
+  --text-faint: #899296;
+  --text-accent: #99CBFF;
+  --text-accent-hover: #B1EBFF;
+  --text-selection: rgba(0, 187, 223, 0.35);
+  --text-on-accent: #080D10;
+  --interactive-accent: #0B8BEE;
+  --interactive-accent-hover: #00BBDF;
+
+  /* 見出しは Ohohama の markup.heading の色 #259BCD */
+  --h1-color: #259BCD;
+  --h2-color: #259BCD;
+  --h3-color: #259BCD;
+  --h4-color: #259BCD;
+  --h5-color: #259BCD;
+  --h6-color: #259BCD;
+
+  --code-background: rgba(137, 146, 150, 0.12);
+  --code-normal: #BFC8CC;
+  --code-comment: #4CB6E9;
+  --code-string: #899296;
+  --code-keyword: #57B1FF;
+  --code-function: #4CB6E9;
+  --code-value: #0097ED;
+  --blockquote-border-color: #0B8BEE;
+  --table-header-background: #0F171B;
+  --scrollbar-thumb-bg: rgba(177, 235, 255, 0.3);
+}
+
+.theme-dark .markdown-rendered h2 {
+  border-bottom-color: rgba(37, 155, 205, 0.4);
+}
+.theme-dark .markdown-rendered th {
+  background-color: var(--table-header-background);
+}
+
+.theme-light .markdown-rendered h2 {
+  border-bottom-color: rgba(11, 139, 238, 0.35);
+}
+.theme-light .markdown-rendered th {
+  background-color: var(--table-header-background);
+}
+
+/* 見出し：h2 に下線、h1 は少し大きく */
+.markdown-rendered h1,
+.markdown-source-view.mod-cm6 .HyperMD-header-1 {
+  font-size: 1.8em;
+}
+.markdown-rendered h2 {
+  padding-bottom: 0.2em;
+  border-bottom: 2px solid var(--background-modifier-border);
+}
+
+/* 表：このボールトは表が多いので、少し小さく、見出し行に色を */
+.markdown-rendered table {
+  font-size: 0.92em;
+  line-height: 1.6;
+}
+.markdown-rendered th {
+  background-color: var(--background-secondary);
+}
+.markdown-rendered td,
+.markdown-rendered th {
+  padding: 0.35em 0.7em;
+}
+
+/* 引用（条文・史料など） */
+.markdown-rendered blockquote {
+  font-size: 0.95em;
+}
+
+/* インラインのコードを日本語の中で目立ちすぎないように */
+.markdown-rendered :not(pre) > code {
+  font-size: 0.9em;
+}
+
+/* コールアウト：オレンジ・赤・緑・紫をやめて、Ohohama の青とグレーだけにする */
+.theme-dark .callout {
+  --callout-note: 11, 139, 238;      /* #0B8BEE */
+  --callout-tip: 0, 187, 223;        /* #00BBDF */
+  --callout-warning: 87, 177, 255;   /* #57B1FF */
+  --callout-danger: 153, 203, 255;   /* #99CBFF */
+  --callout-example: 76, 182, 233;   /* #4CB6E9 */
+  --callout-question: 37, 155, 205;  /* #259BCD */
+  --callout-quote: 137, 146, 150;    /* #899296 */
+  --callout-summary: 164, 173, 176;  /* #A4ADB0 */
+}
+.theme-light .callout {
+  --callout-note: 9, 102, 176;       /* #0966B0 */
+  --callout-tip: 0, 112, 140;        /* #00708C */
+  --callout-warning: 20, 90, 160;    /* #145AA0 */
+  --callout-danger: 0, 32, 91;       /* #00205B（Ohohama の city.k） */
+  --callout-example: 26, 110, 150;   /* #1A6E96 */
+  --callout-question: 22, 100, 135;  /* #166487 */
+  --callout-quote: 91, 101, 115;     /* #5B6573 */
+  --callout-summary: 91, 101, 115;   /* #5B6573 */
+}
+.callout[data-callout="note"], .callout[data-callout="info"], .callout[data-callout="todo"] {
+  --callout-color: var(--callout-note);
+}
+.callout[data-callout="tip"], .callout[data-callout="hint"], .callout[data-callout="important"],
+.callout[data-callout="success"], .callout[data-callout="check"], .callout[data-callout="done"] {
+  --callout-color: var(--callout-tip);
+}
+.callout[data-callout="warning"], .callout[data-callout="caution"], .callout[data-callout="attention"] {
+  --callout-color: var(--callout-warning);
+}
+.callout[data-callout="danger"], .callout[data-callout="error"], .callout[data-callout="failure"],
+.callout[data-callout="fail"], .callout[data-callout="missing"], .callout[data-callout="bug"] {
+  --callout-color: var(--callout-danger);
+}
+.callout[data-callout="example"] {
+  --callout-color: var(--callout-example);
+}
+.callout[data-callout="question"], .callout[data-callout="help"], .callout[data-callout="faq"] {
+  --callout-color: var(--callout-question);
+}
+.callout[data-callout="quote"], .callout[data-callout="cite"] {
+  --callout-color: var(--callout-quote);
+}
+.callout[data-callout="abstract"], .callout[data-callout="summary"], .callout[data-callout="tldr"] {
+  --callout-color: var(--callout-summary);
+}

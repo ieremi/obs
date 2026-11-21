@@ -1,1 +1,8 @@
-{}
+{
+  "showRibbon": true,
+  "enabledCssSnippets": [
+    "ubuntu-ja",
+    "ohohama"
+  ],
+  "theme": "obsidian"
+}
