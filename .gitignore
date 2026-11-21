@@ -2,10 +2,13 @@
 .obsidian/workspace-mobile.json
 .obsidian/graph.json
 .obsidian/plugins/copilot/data.json
+.obsidian/plugins/grimoire/data.json
 .agents/skills/
 .claude/skills/
 .copilot/
+.grimoire/
 /copilot/copilot-conversations/agent__*.md
+/copilot/copilot-conversations/attachments/
 */.obsidian/workspace.json
 */.obsidian/workspace-mobile.json
 .trash/
