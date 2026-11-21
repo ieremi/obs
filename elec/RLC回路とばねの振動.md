@@ -37,7 +37,7 @@ $$
 回路方程式に $I=\dot Q$ を掛けると、
 
 $$
-\frac{d}{dt}\left(\frac12 LI^2+\frac{Q^2}{2C}\right)
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac12 LI^2+\frac{Q^2}{2C}\right)
 =E(t)I-RI^2
 $$
 
@@ -46,7 +46,7 @@ $$
 力学でも同様に、
 
 $$
-\frac{d}{dt}\left(\frac12 m\dot x^2+\frac12 kx^2\right)
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac12 m\dot x^2+\frac12 kx^2\right)
 =F(t)\dot x-b\dot x^2
 $$
 

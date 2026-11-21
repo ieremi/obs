@@ -131,10 +131,10 @@ $$
 滑らかな関数 $f$ に対して、連続時間の運動
 
 $$
-\frac{d\mathbf{r}}{dt}=-\nabla f(\mathbf{r}(t))
+\frac{\mathrm{d}\mathbf{r}}{\mathrm{d}t}=-\nabla f(\mathbf{r}(t))
 $$
 
-を考える。連鎖律を使って $df/dt\le0$ を示せ。
+を考える。連鎖律を使って $\mathrm{d}f/\mathrm{d}t\le0$ を示せ。
 
 次に、1次元で $f(x)=x^2/2$ とし、離散的な更新
 
@@ -163,7 +163,7 @@ $$
 $g$ の負の勾配に従う運動は、
 
 $$
-\frac{dx}{dt}=-2x,\qquad\frac{dy}{dt}=2y
+\frac{\mathrm{d}x}{\mathrm{d}t}=-2x,\qquad\frac{\mathrm{d}y}{\mathrm{d}t}=2y
 $$
 
 だから、$x$ 軸上では原点に近づくが、$y$ 軸上では原点から離れる。原点そのものから始めると動かない。
@@ -175,8 +175,8 @@ $$
 連鎖律より、
 
 $$
-\frac{df}{dt}
-=\nabla f\cdot\frac{d\mathbf{r}}{dt}
+\frac{\mathrm{d}f}{\mathrm{d}t}
+=\nabla f\cdot\frac{\mathrm{d}\mathbf{r}}{\mathrm{d}t}
 =-|\nabla f|^2\le0
 $$
 

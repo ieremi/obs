@@ -156,14 +156,14 @@ $$
 
 $$
 \mathbf{F}=(-\sin t,\cos t,0),\qquad
-\frac{d\mathbf{r}}{dt}=(-\sin t,\cos t,0)
+\frac{\mathrm{d}\mathbf{r}}{\mathrm{d}t}=(-\sin t,\cos t,0)
 $$
 
 より、
 
 $$
 \oint_C\mathbf{F}\cdot d\mathbf{r}
-=\int_0^{2\pi}1\,dt=2\pi
+=\int_0^{2\pi}1\,\mathrm{d}t=2\pi
 $$
 
 一価な $f$ の勾配なら、この積分は終点と始点の $f$ の差であり、一周するとゼロになるはず。したがって、そのような $f$ は領域全体には存在しない。
@@ -182,7 +182,7 @@ $$
 粒子の運動方程式を解くと、
 
 $$
-\frac{dx}{dt}=ax,\quad\frac{dy}{dt}=-ay,\quad\frac{dz}{dt}=0
+\frac{\mathrm{d}x}{\mathrm{d}t}=ax,\quad\frac{\mathrm{d}y}{\mathrm{d}t}=-ay,\quad\frac{\mathrm{d}z}{\mathrm{d}t}=0
 \quad\Longrightarrow\quad
 (x,y,z)=(x_0e^{at},y_0e^{-at},z_0)
 $$

@@ -40,25 +40,25 @@ $$
 又、
 
 $$
-I=\frac{dQ}{dt}
+I=\frac{\mathrm{d}Q}{\mathrm{d}t}
 $$
 
 と置けば、
 
 $$
-R\frac{dQ}{dt}+\frac{Q}{C}=0
+R\frac{\mathrm{d}Q}{\mathrm{d}t}+\frac{Q}{C}=0
 $$
 
 故に、
 
 $$
-\frac{dQ}{dt}=-\frac{Q}{RC}
+\frac{\mathrm{d}Q}{\mathrm{d}t}=-\frac{Q}{RC}
 $$
 
 變數を分離すれば、
 
 $$
-\frac{dQ}{Q}=-\frac{dt}{RC}
+\frac{\mathrm{d}Q}{Q}=-\frac{\mathrm{d}t}{RC}
 $$
 
 兩邊を積分して、
@@ -240,25 +240,25 @@ $$
 > また、
 >
 > $$
-> I=\frac{dQ}{dt}
+> I=\frac{\mathrm{d}Q}{\mathrm{d}t}
 > $$
 >
 > とすると、
 >
 > $$
-> R\frac{dQ}{dt}+\frac{Q}{C}=0
+> R\frac{\mathrm{d}Q}{\mathrm{d}t}+\frac{Q}{C}=0
 > $$
 >
 > したがって、
 >
 > $$
-> \frac{dQ}{dt}=-\frac{Q}{RC}
+> \frac{\mathrm{d}Q}{\mathrm{d}t}=-\frac{Q}{RC}
 > $$
 >
 > 変数分離すると、
 >
 > $$
-> \frac{dQ}{Q}=-\frac{dt}{RC}
+> \frac{\mathrm{d}Q}{Q}=-\frac{\mathrm{d}t}{RC}
 > $$
 >
 > 両辺を積分して、

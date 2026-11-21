@@ -23,10 +23,10 @@ tags:
 
 ## 原理：X 線の減衰
 
-厚さ $dx$ の物質を通ると、X 線の強さ $I$ は、そのときの強さと厚さに比例して減る。比例定数を **線減弱係数** $\mu$ とすると、
+厚さ $\mathrm{d}x$ の物質を通ると、X 線の強さ $I$ は、そのときの強さと厚さに比例して減る。比例定数を **線減弱係数** $\mu$ とすると、
 
 $$
-dI=-\mu I\,dx
+\mathrm{d}I=-\mu I\,\mathrm{d}x
 \quad\Longrightarrow\quad
 \boxed{I=I_0\,e^{-\mu x}}
 $$

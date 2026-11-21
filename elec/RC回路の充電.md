@@ -53,10 +53,10 @@ related:
 
 - 電源 $V_0$(長い線が +)、スイッチ $S$、抵抗 $R$、コンデンサ $C$ を直列につなぐ
 - $t=0$ で $S$ を閉じると電流 $I$ が流れ、コンデンサの上の極板に + の電荷がたまっていく
-- [[キルヒホッフの法則|キルヒホッフの第 2 法則]]から、電源の電圧 = 抵抗の電圧 $RI$ + コンデンサの電圧 $Q/C$。$I=dQ/dt$ なので次の式になる
+- [[キルヒホッフの法則|キルヒホッフの第 2 法則]]から、電源の電圧 = 抵抗の電圧 $RI$ + コンデンサの電圧 $Q/C$。$I=\mathrm{d}Q/\mathrm{d}t$ なので次の式になる
 
 $$
-V_0=R\frac{dQ}{dt}+\frac{Q}{C}
+V_0=R\frac{\mathrm{d}Q}{\mathrm{d}t}+\frac{Q}{C}
 $$
 
 初期条件は、スイッチを閉じた瞬間にコンデンサに電荷がないこと:
@@ -67,17 +67,17 @@ $$
 
 ## 微分方程式の解き方(変数分離)
 
-### 1. $\dfrac{dQ}{dt}$ について解く
+### 1. $\dfrac{\mathrm{d}Q}{\mathrm{d}t}$ について解く
 両辺から $\dfrac{Q}{C}$ を引いて $R$ で割る。
 
 $$
-\frac{dQ}{dt}=\frac{V_0}{R}-\frac{Q}{RC}
+\frac{\mathrm{d}Q}{\mathrm{d}t}=\frac{V_0}{R}-\frac{Q}{RC}
 $$
 
 右辺を $\dfrac{1}{RC}$ でくくると、
 
 $$
-\frac{dQ}{dt}=\frac{CV_0-Q}{RC}
+\frac{\mathrm{d}Q}{\mathrm{d}t}=\frac{CV_0-Q}{RC}
 $$
 
 - $CV_0$ は、十分に時間がたって充電が終わったときの電荷(最終値)
@@ -87,20 +87,20 @@ $$
 $Q$ を含むものを左辺に、$t$ を含むものを右辺に集める。
 
 $$
-\frac{dQ}{CV_0-Q}=\frac{dt}{RC}
+\frac{\mathrm{d}Q}{CV_0-Q}=\frac{\mathrm{d}t}{RC}
 $$
 
 ### 3. 両辺を積分する
-左辺は $u=CV_0-Q$ と置くと $du=-dQ$ なので、
+左辺は $u=CV_0-Q$ と置くと $\mathrm{d}u=-\mathrm{d}Q$ なので、
 
 $$
-\int\frac{dQ}{CV_0-Q}=-\int\frac{du}{u}=-\ln|u|=-\ln|CV_0-Q|
+\int\frac{\mathrm{d}Q}{CV_0-Q}=-\int\frac{\mathrm{d}u}{u}=-\ln|u|=-\ln|CV_0-Q|
 $$
 
 右辺は $RC$ が定数なので、
 
 $$
-\int\frac{dt}{RC}=\frac{t}{RC}
+\int\frac{\mathrm{d}t}{RC}=\frac{t}{RC}
 $$
 
 積分定数をまとめて $K$ とすると、
@@ -153,7 +153,7 @@ $$
 \boxed{V_C(t)=V_0\left(1-e^{-t/RC}\right)}
 $$
 
-**電流**は $I=dQ/dt$ なので、$Q(t)$ を微分する。$\dfrac{d}{dt}e^{-t/RC}=-\dfrac{1}{RC}e^{-t/RC}$ だから、
+**電流**は $I=\mathrm{d}Q/\mathrm{d}t$ なので、$Q(t)$ を微分する。$\dfrac{\mathrm{d}}{\mathrm{d}t}e^{-t/RC}=-\dfrac{1}{RC}e^{-t/RC}$ だから、
 
 $$
 I(t)=CV_0\cdot\frac{1}{RC}e^{-t/RC}
@@ -178,7 +178,7 @@ RI+\frac{Q}{C}
 =V_0
 $$
 
-どの時刻でも元の式 $V_0=R\dfrac{dQ}{dt}+\dfrac{Q}{C}$ を満たす。
+どの時刻でも元の式 $V_0=R\dfrac{\mathrm{d}Q}{\mathrm{d}t}+\dfrac{Q}{C}$ を満たす。
 
 ### 始まりと終わり
 | | $t=0$(閉じた直後) | $t\to\infty$(十分に時間がたったあと) |
@@ -193,18 +193,18 @@ $$
 
 ## 別の解き方
 ### 定常解 + 同次解
-1. 十分に時間がたったあとの「変化しない解」(**定常解**)を探す。$dQ/dt=0$ と置くと $V_0=Q/C$ なので $Q=CV_0$
-2. 右辺を 0 にした式 $R\dfrac{dQ}{dt}+\dfrac{Q}{C}=0$(**同次方程式**、放電の式と同じ)の解は $Ae^{-t/RC}$
+1. 十分に時間がたったあとの「変化しない解」(**定常解**)を探す。$\mathrm{d}Q/\mathrm{d}t=0$ と置くと $V_0=Q/C$ なので $Q=CV_0$
+2. 右辺を 0 にした式 $R\dfrac{\mathrm{d}Q}{\mathrm{d}t}+\dfrac{Q}{C}=0$(**同次方程式**、放電の式と同じ)の解は $Ae^{-t/RC}$
 3. 一般解は 2 つの和: $Q=CV_0+Ae^{-t/RC}$
 4. $Q(0)=0$ から $A=-CV_0$。上と同じ答えになる
 
 線形の微分方程式では、「最終的な状態」と「そこへ近づいていく指数関数」の和として考えると見通しがよい。
 
 ### 積分因子
-両辺を $R$ で割って $\dfrac{dQ}{dt}+\dfrac{1}{RC}Q=\dfrac{V_0}{R}$ とし、両辺に $e^{t/RC}$ をかけると、左辺が積の微分の形になる。
+両辺を $R$ で割って $\dfrac{\mathrm{d}Q}{\mathrm{d}t}+\dfrac{1}{RC}Q=\dfrac{V_0}{R}$ とし、両辺に $e^{t/RC}$ をかけると、左辺が積の微分の形になる。
 
 $$
-\frac{d}{dt}\left(Qe^{t/RC}\right)=\frac{V_0}{R}e^{t/RC}
+\frac{\mathrm{d}}{\mathrm{d}t}\left(Qe^{t/RC}\right)=\frac{V_0}{R}e^{t/RC}
 $$
 
 両辺を $0$ から $t$ まで積分すると、$Q(0)=0$ なので、

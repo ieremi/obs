@@ -120,7 +120,7 @@ $$
 を考える。大きさは $1/r^2$ で、常に外向きである。
 
 1. $0<r$ で $\nabla\cdot\mathbf{F}=0$ を示せ。
-2. 原点を中心とする半径 $R$ の球面を通る外向きの流束 $\iint \mathbf{F}\cdot\mathbf{n}\,dS$ を求めよ。$\mathbf{n}$ は外向き単位法線とする。
+2. 原点を中心とする半径 $R$ の球面を通る外向きの流束 $\iint \mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S$ を求めよ。$\mathbf{n}$ は外向き単位法線とする。
 3. 発散定理「境界から出る流束＝内部の発散の体積積分」と矛盾しない理由を説明せよ。
 
 **問6：流れが収束したら、密度はどうなる？**
@@ -162,7 +162,7 @@ $$
 球面では $\mathbf{F}\cdot\mathbf{n}=1/R^2$ が一定だから、
 
 $$
-\iint_{r=R}\mathbf{F}\cdot\mathbf{n}\,dS
+\iint_{r=R}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S
 =\frac{1}{R^2}\,4\pi R^2=4\pi
 $$
 
@@ -182,7 +182,7 @@ $$
 これを連続の式へ代入すれば、指定された式が得られる。今回の速度場では $\nabla\cdot\mathbf{v}=-3a$ なので、粒子に沿って
 
 $$
-\frac{d\rho}{dt}=3a\rho
+\frac{\mathrm{d}\rho}{\mathrm{d}t}=3a\rho
 \quad\Longrightarrow\quad
 \rho(t)=\rho_0e^{3at}
 $$
