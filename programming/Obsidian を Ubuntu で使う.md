@@ -81,6 +81,33 @@ Ubuntu 24.04 で起きやすい 2 つの問題：
 | `obsidian://` のリンク | .deb で入れると、ブラウザーからのリンクでアプリが開くように登録される |
 | 同期 | 公式の **Obsidian Sync**（有料）、または **git**（このボールトのやり方。コミュニティプラグインの **Obsidian Git** もある）、Syncthing など |
 
+## 日付を yyyy-mm-dd で表示する
+プロパティの **日付**（`date` など）の表示の形は、Obsidian の設定ではなく、**Obsidian の中の Chromium の言語** で決まる。このパソコンは `LANG=en_GB.UTF-8`（イギリス英語）なので、`27/09/2026`（日/月/年）になっていた。
+
+2026-11-21 に、Chromium（snap 版）で `<input type="date">` を表示して試した結果：
+
+| 言語の指定 | 表示 |
+| --- | --- |
+| `LANG=en_GB`（いまの設定） | 27/09/2026 |
+| `--lang=en-CA`（コマンドのオプション） | 27/09/2026（**Linux では効かない**） |
+| `LANGUAGE=en_CA` | 27/09/2026 |
+| `LANGUAGE=ja_JP` | 2026/09/27 |
+| **`LANGUAGE=sv`**（スウェーデン語） | **2026-09-27** |
+
+そこで、**Obsidian だけ `LANGUAGE=sv` で起動** するようにした。
+
+- `/usr/share/applications/md.obsidian.Obsidian.desktop` をもとに、**`~/.local/share/applications/md.obsidian.Obsidian.desktop`** を作り、`Exec=` を次のようにした（同じ名前のファイルは、ホームのほうが優先される）：
+
+  ```text
+  Exec=env LANGUAGE=sv /opt/Obsidian/obsidian %U
+  ```
+
+- **メニューから起動しなおす** と効く（いま開いている Obsidian は、完全に閉じてから）
+- 端末から起動するときは `LANGUAGE=sv obsidian`
+- 気をつけること：Chromium が自分で出す文字（日付を選ぶカレンダーの月の名前、一部の右クリックのメニューなど）が **スウェーデン語** になることがある。Obsidian 自体の画面の言語は、Settings → General → **Language** で決まるので、もし変わったら English か 日本語 に選びなおす
+- もとにもどすには、`~/.local/share/applications/md.obsidian.Obsidian.desktop` を消す
+- ノートのファイルの中は、もともと `date: 2026-09-27` の形（変わるのは表示だけ）
+
 ## 押さえどころ
 - Ubuntu では **公式の .deb**（`sudo apt install ./obsidian_*.deb`）がいちばん楽で、問題が少ない
 - AppImage は 24.04 で **libfuse2t64** と **sandbox（AppArmor）** の問題が出る。`/opt/Obsidian/obsidian` に置けば AppArmor の問題は消える

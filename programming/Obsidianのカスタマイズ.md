@@ -77,7 +77,7 @@ Mac の書き方（⌘、Hiragino）は、Ubuntu ではこう読みかえる（�
 - 中身：
   - フォント：本文と画面は **Noto Sans CJK JP**、コードは **Hack Nerd Font Mono**（日本語は Noto Sans Mono CJK JP）。VS Code の設定とそろえた
   - 行間 1.8、本文の幅 48rem
-  - h2 に下線、h1 を少し大きく
+  - 見出しをモダンに（下の「見出しの見せ方」）
   - **表**：文字を少し小さく、見出し行に背景色、すきまを整える（このボールトは表が多いため）
   - 引用とインラインのコードを少し小さく
 - 明朝体で読みたいときは、`--font-text-theme` を `"Noto Serif CJK JP", serif` に変える
@@ -116,13 +116,51 @@ Mac の書き方（⌘、Hiragino）は、Ubuntu ではこう読みかえる（�
 | うすい文字 | #A4ADB0・#899296 | neutral のグレー |
 | **アクセント**（ボタン、チェックボックス、引用の線） | **#0B8BEE** | `palette.city.t` |
 | マウスを乗せたアクセント | #00BBDF | statusBar・選択の色 |
-| **見出し**（h1〜h6） | **#259BCD** | `markup.heading.markdown` |
+| 見出し | h1・h2 は本文と同じ #E6EDF9、h3 は #57B1FF、h4 以下は #A4ADB0（下の「見出しの見せ方」） | はじめは Ohohama の `markup.heading.markdown` の #259BCD にしていたが、モダンにするときに変えた |
 | リンク | #99CBFF | badge の色 |
 | 選んだ文字 | #00BBDF を透かしたもの | `editor.selectionBackground` |
 | コード | 文字 #BFC8CC、キーワード #57B1FF、関数・コメント #4CB6E9、文字列 #899296、数 #0097ED | `tokenColors` |
 
-- 背景 #080D10 とのコントラスト（このパソコンで計算）：本文 16.6:1、見出し 6.2:1、リンク 11.5:1、うすい文字 8.5:1・6.2:1。どれも 4.5:1 をこえる
+- 背景 #080D10 とのコントラスト（このパソコンで計算）：本文と h1・h2 16.6:1、h3 8.5:1、リンク 11.5:1、うすい文字 8.5:1・6.2:1。どれも 4.5:1 をこえる
 - ボタンの文字は、Ohohama の #E6EDF9 だと #0B8BEE の上で読みにくいので、**#080D10（黒）** にした（5.5:1）
+
+#### 見出しの見せ方（モダンに）
+
+見出しを **角のまるい枠** でかこむ形にした。大きさ・太さ・色でも階層を見せる。
+
+| 見出し | 形 | 大きさ・太さ | 文字の色（ダーク／ライト） |
+| --- | --- | --- | --- |
+| h1 | **角の大きくまるいカード**（角の丸み 14px、**2px の白っぽい枠線**） | 2em・700 | 本文と同じ #E6EDF9／#222831 |
+| h2 | **まるい枠**（角の丸み 10px、1px の白っぽい枠線） | 1.5em・700 | 本文と同じ |
+| h3 | **文字の長さだけの、丸い「ピル」**（角の丸み 999px、1px の白っぽい枠線） | 1.2em・700 | 青 #57B1FF／#0966B0 |
+| h4 | 前に **小さな丸い点**（#0B8BEE） | 1.05em・500 | うすいグレー #A4ADB0／#5B6573 |
+| h5・h6 | かざりなし | 1〜0.95em・500 | うすいグレー |
+
+- **背景は本文とほとんど同じ** にし（#0B8BEE を 3〜6% だけ透かす）、**白っぽい、はっきりした枠線** で見出しを見せる（ダークは Ohohama の白 #E6EDF9 の 45〜70%、ライトは白 #FFFFFF）。はじめは背景を 12〜28% にして h1 をグラデーションにしたが、本文との差が大きすぎてやぼったかったので、うすくした
+- 見出しの上の余白を広く（`--heading-spacing: 2.2em`）、行間をつめた（1.3〜1.4）
+- **読む画面**（`.markdown-rendered hN`）と **編集の画面**（ライブプレビューの `.cm-line.HyperMD-header-N`）の両方につけた。ただし編集の画面では、h3 も行いっぱいの角丸になる（CodeMirror の行は、文字の長さに合わせられないため）。編集の画面の枠線は、`border` ではなく `box-shadow: inset`（内側の影）で描いた。`border` だと行の高さがずれるため
+- Obsidian の変数 `--h1-size`〜`--h6-size`、`--h1-weight`〜、`--h1-color`〜、`--h1-line-height`〜 を使った
+- 背景とのコントラスト：h3 は 8.5:1（ダーク）・5.1:1（ライト）、h4 以下は 8.5:1・5.1:1（このパソコンで計算した。枠の中は少し色がつくので、実際は少しだけ下がる）
+- Noto Sans CJK JP は、太さ 500（Medium）と 700（Bold）を持っている
+
+#### スペルチェックの赤い波線を消す
+
+英語の単語（`CONFIG.SYS`、`AUTOEXEC.BAT` など）の下に出る **赤い波線** は、Obsidian の **スペルチェック**。日本語のノートが中心のこのボールトでは、ほとんど役に立たない。
+
+- 消し方：**Settings → Editor → Spellcheck** をオフ（`Ctrl+,` → Editor → Spellcheck）
+- 設定は `.obsidian/app.json` に `"spellcheck": false` として入る
+- **このボールトでは、スペルチェックは残して、波線の色だけ青にした**（snippet に足した。Chromium の疑似要素 `::spelling-error`・`::grammar-error` を使う）：
+
+  ```css
+  ::spelling-error {
+    text-decoration: underline wavy var(--interactive-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  ```
+
+  - `::spelling-error` で使えるのは、文字の色や `text-decoration` など一部のプロパティだけ
+  - Electron（Chromium）の版が古いと効かない。効かなければ、スペルチェックをオフにする
 
 #### コールアウトの色
 
@@ -141,6 +179,43 @@ Obsidian のコールアウト（`> [!caution]` など）は、はじめは種�
 
 - タイトルの文字の色も、この色になる。背景とのコントラストは、ダークで 5.5〜11.5:1、ライトで 4.9〜13.3:1（このパソコンで計算した）
 - 色で種類を見分けにくくなるので、種類は **アイコン** で見分ける
+
+#### ハイライトの色
+
+アウトラインや検索で飛んだ先が **黄色く点滅** し、`==文字==` のハイライトも黄色になる。これは `--text-highlight-bg`（と、検索で今いる所の `--text-highlight-bg-active`）の色。snippet で **#0B8BEE を透かした青** にした。
+
+| | ダーク | ライト |
+| --- | --- | --- |
+| ハイライト・点滅 | #0B8BEE の 35% | #0B8BEE の 25% |
+| 検索で今いる所 | #00BBDF の 45% | #0B8BEE の 40% |
+
+#### 警告の色（黄色・オレンジ）
+
+Copilot プラグインの設定の **⚠ の黄色** など、Obsidian やプラグインの「警告」は `--text-warning` の色を使う。ほかにも `--color-yellow`・`--color-orange`（と、その `-rgb`）を使う所がある。snippet で、これらを **全体で青系** にした。
+
+| 変数 | ダーク | ライト |
+| --- | --- | --- |
+| `--text-warning`・`--color-yellow` | #57B1FF | #145AA0 |
+| `--color-orange` | #4CB6E9 | #1A6E96 |
+
+- 緑（`--color-green`・`--color-green-rgb`・`--text-success`）も、全体で **水色**（ダーク #00BBDF、ライト #00708C）にした。Copilot のチャットの「+65」のような、差分の追加の数が緑だったため
+- 赤（`--text-error`・`--color-red`）は、全体ではまだ変えていない（Git の画面の中だけ青にした）
+
+#### Git プラグインの色
+
+[[Obsidian で Git を使う|Git プラグイン]]（obsidian-git）は、変更の一覧の **M をオレンジ**、**D を赤** で出し、差分や行の印には **緑・黄・赤** を使う。これも snippet で **青系** にした。
+
+| 意味 | 一覧の文字 | ダーク | ライト |
+| --- | --- | --- | --- |
+| 追加・新しいファイル | A・U・? | #00BBDF | #00708C |
+| 変更 | M・R・C | #57B1FF | #145AA0 |
+| 削除 | D | #0B8BEE | #00205B |
+
+- プラグインの CSS（`.obsidian/plugins/obsidian-git/styles.css`）を読んで、上書きする所を決めた：
+  - 一覧の文字：`.git-tools .type[data-type="M"]` などに、じかに `orange`・`red` と書いてある
+  - 行の印・下の帯・差分：`var(--color-green)`・`--color-yellow`・`--color-red` を使っている。snippet では、**Git の画面と部品の中だけ** これらの変数を青に置きかえた（ほかの所の赤や緑は変えない）
+  - 差分の画面（diff2html）：`--git-insert-bg` などの変数
+  - 左右に並べる差分：`.cm-deletedLine`・`.cm-insertedLine` の背景
 
 ### 注意：vault が二つある
 
