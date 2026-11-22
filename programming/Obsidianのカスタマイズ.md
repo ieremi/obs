@@ -34,31 +34,9 @@ Obsidian の **見た目の変え方** と、**Claude とつなぐ方法** の�
 - Minimal には専用の **Minimal Theme Settings** プラグインもある
 - Community plugin は **Settings → Community plugins → Browse** から入れる。はじめは **Turn on community plugins** を押す（Restricted mode を切る）
 
-### CSS snippets
+### CSS スニペット
 
-1. **Settings → Appearance → CSS snippets** のフォルダのアイコンを押して、`snippets` フォルダを開く
-2. `.css` ファイルを置く
-3. 更新のアイコン（**Reload snippets**）を押し、トグルをオンにする
-
-例：日本語の本文を読みやすくし、見出しと引用を整える。
-
-```css
-/* .obsidian/snippets/custom.css */
-body {
-  --font-text-theme: "Hiragino Sans", "Noto Sans JP", sans-serif;
-  --line-height-normal: 1.8;
-  --file-line-width: 46rem;
-}
-.markdown-rendered h2 {
-  border-bottom: 1px solid var(--background-modifier-border);
-}
-.markdown-rendered blockquote {
-  font-size: 0.95em; /* 条文の引用など */
-}
-```
-
-- 色は `var(--text-accent)` などの **CSS 変数** を使うと、ライトとダークの両方で自然になる
-- 変数の一覧は、**View → Toggle Developer Tools**（⌥⌘I）で調べられる
+書き方とデスクトップ・iOS での利用方法は [[Obsidian の CSS スニペット]] を参照。
 
 ### Ubuntu では
 
