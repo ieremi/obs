@@ -212,15 +212,22 @@ body.theme-light {
   --heading-spacing: 2.2em;
 }
 
-/* h1: pale blue rounded band with a light blue circle behind the first letter */
+/* h1: a pale blue pill-shaped band, with a light blue circle that fills its left end
+   and sits behind the first letter.
+   - The band is 1.5em tall (line height 1.3em + 0.1em above and below), and its corners
+     are half of that, so the left end is a half circle of the same size as the circle
+   - The text starts 0.25em in, so a full-width first character is centered at 0.75em,
+     which is also the center of the circle
+   - The circle is centered on the first line, so it stays on the first letter when
+     the heading wraps */
 .markdown-rendered h1,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 {
   position: relative;
   isolation: isolate;
-  margin-left: 0.35em;
-  padding: 0 0.6em 0 0.25em;
+  margin-left: 0;
+  padding: 0.1em 0.8em 0.1em 0.25em;
   border: none;
-  border-radius: 12px;
+  border-radius: 0.75em;
   background: var(--ohohama-h1-band);
   box-shadow: none;
   letter-spacing: 0.02em;
@@ -230,10 +237,10 @@ body.theme-light {
   content: "";
   position: absolute;
   z-index: -1;
-  left: -0.4em;
-  top: 50%;
-  width: 1.6em;
-  height: 1.6em;
+  left: 0;
+  top: calc(0.1em + var(--h1-line-height) * 0.5em);
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 50%;
   background: var(--ohohama-h1-circle);
   transform: translateY(-50%);
@@ -489,6 +496,93 @@ body .grimoire-model-label {
 /* Grimoire: outline your own messages so they stand out a little from the replies */
 body .grimoire-message-user {
   box-shadow: inset 0 0 0 1px var(--ohohama-user-message-border);
+}
+
+/* Grimoire: the permission request floats over the chat (position: absolute), so it hides
+   the last tool rows. While it is open, put it in the normal flow in place of the locked
+   input, so the chat area ends above it instead of underneath it */
+body .grimoire-composer--asking > .grimoire-permission-anchor {
+  position: relative;
+  inset: auto;
+}
+body .grimoire-composer--asking .grimoire-input-container--permission-locked {
+  display: none;
+}
+
+/* Grimoire: a Latin font for the tool verb ("Ran command", "Read note"), because the
+   Latin letters of Noto Sans CJK JP end flat on the baseline and look cut off.
+   IBM Plex Sans is a modern UI font (Ubuntu package fonts-ibm-plex) */
+body .grimoire-tool-step .grimoire-tool-name {
+  font-family: "IBM Plex Sans", var(--font-interface);
+}
+
+/* Page title (inline title): white text on a blue band with a polka-dot pattern.
+   The band is the accent blue made a little darker so the white text stands out.
+   Two dot layers, the second shifted by half a tile, give the staggered pattern */
+.inline-title {
+  --ohohama-dot: rgba(255, 255, 255, 0.16);
+  --inline-title-color: #ffffff;
+  color: #ffffff;
+  padding: 0.7em 1em;
+  margin-block-end: 0.8em;
+  border-radius: 14px;
+  background-color: color-mix(in srgb, var(--interactive-accent) 82%, #000000);
+  background-image:
+    radial-gradient(circle, var(--ohohama-dot) 2.5px, transparent 3px),
+    radial-gradient(circle, var(--ohohama-dot) 2.5px, transparent 3px);
+  background-size: 18px 18px;
+  background-position: 0 0, 9px 9px;
+}
+
+/* Properties (page metadata): a card with a blue bar on the left, like the h2 bar,
+   a small blue title, dashed lines between rows, and outlined blue pills */
+:is(.markdown-source-view, .markdown-preview-view) .metadata-container {
+  position: relative;
+  margin-block: 0.4em 2em;
+  padding: 0.55em 0.9em 0.45em 1.15em;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  background-color: var(--ohohama-h1-bg);
+}
+:is(.markdown-source-view, .markdown-preview-view) .metadata-container::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  width: 5px;
+  border-radius: 10px 0 0 10px;
+  background-color: var(--interactive-accent);
+  pointer-events: none;
+}
+:is(.markdown-source-view, .markdown-preview-view) .metadata-container.is-collapsed {
+  padding-block: 0.3em;
+}
+:is(.markdown-source-view, .markdown-preview-view) .metadata-properties-title {
+  color: var(--text-accent);
+  font-size: var(--font-ui-smaller);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+:is(.markdown-source-view, .markdown-preview-view) .metadata-property + .metadata-property {
+  border-top: 1px dashed var(--background-modifier-border);
+}
+:is(.markdown-source-view, .markdown-preview-view) .metadata-property-icon {
+  color: var(--text-accent);
+}
+:is(.markdown-source-view, .markdown-preview-view) .metadata-property-key-input {
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+:is(.markdown-source-view, .markdown-preview-view) .metadata-container .multi-select-pill {
+  border: 1px solid color-mix(in srgb, var(--interactive-accent) 55%, transparent);
+  border-radius: 999px;
+  background-color: color-mix(in srgb, var(--interactive-accent) 8%, transparent);
+  color: var(--text-accent);
+  /* Obsidian puts this on the left of the text: 0 for most pills but 0.65em for tags,
+     so set one value for both */
+  --pill-padding-x: 0.6em;
 }
 
 /* Spell check underline: Ohohama blue instead of red */

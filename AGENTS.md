@@ -7,3 +7,7 @@
 ## 2. 図・ビジュアル表現の配色
 - ノート内に掲載する図（SVG、Mermaid、ダイアグラム等）には、**無彩色（白、黒、グレー、`currentColor`）と青系（ブルー、ネイビー、スレートブルー等）のみ**を使用する。
 - 赤、オレンジ、黄、緑などの暖色系やその他の色相は使用しない。
+
+## 3. Ohohama のスニペット
+- `.obsidian/snippets/ohohama.css` は `~/prd/src/ohohama` の `obsidian/` から生成したものを、そのままコピーしている。このファイルは直接編集しない。
+- 見た目を変えるときは `~/prd/src/ohohama` の `obsidian/config.ts`・`obsidian/rules.css` を編集し、`~/prd/src/ohohama` で `OBSIDIAN_SNIPPETS_DIR=~/prd/src/obs/.obsidian/snippets npm run deploy:obsidian` を実行してコピーする。
