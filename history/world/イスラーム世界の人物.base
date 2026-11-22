@@ -1,0 +1,25 @@
+filters:
+  and:
+    - file.inFolder("history/world/イスラーム世界の人物")
+    - file.ext == "md"
+properties:
+  関連政権:
+    displayName: 関連する王朝・政権
+  活動時期:
+    displayName: 活動時期
+  地域:
+    displayName: 地域
+  人物像:
+    displayName: 人物像
+views:
+  - type: table
+    name: 人物一覧
+    order:
+      - file.name
+      - 関連政権
+      - 活動時期
+      - 地域
+      - 人物像
+    sort:
+      - property: file.name
+        direction: ASC
