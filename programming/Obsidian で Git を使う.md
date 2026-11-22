@@ -128,6 +128,34 @@ CLAUDE="$HOME/.local/bin/claude"   # nvm の PATH は Obsidian から見えな�
   - 一度コミットしたファイルは、`.gitignore` に書くだけでは追跡が止まらない。`git rm --cached` が要る
 - プラグインを入れると `.obsidian/plugins/obsidian-git/` ができる。設定（`data.json`）をほかのパソコンと共有したいなら、コミットしてよい
 
+## `.claude/settings.json` の扱い
+**このボールトでは、`.gitignore` で外す（コミットしない）のがよい。**
+
+`.claude/settings.json` は Claude Code の **プロジェクトの設定**。本来は、チームで共有する設定（許可するコマンド、フックなど）を書いて **コミットする** ためのファイルである。自分だけの設定は **`.claude/settings.local.json`** に書き、こちらはコミットしない、という分け方になっている。
+
+ただ、このボールトの `settings.json`（2026-11-22 に見た）は、中身が次のようになっている。
+
+- `permissions.allow` に、Claude が **1 回だけ動かした長い Bash のコマンド** が、そのまま並んでいる。ツールの実行を「許可」したときに、自動で足されたもの
+- コマンドが一字一句同じでないと効かないので、**あとで役に立たない**
+- `/home/ieremius/…` のような **このパソコンのパス** が入っている
+- 許可するたびに書きかわるので、コミットすると **意味のない変更がたまる**（`graph.json` と同じ）
+
+共有したい設定は入っておらず、ほかのパソコンで同じ設定が要るわけでもない。したがって、外してよい。
+
+```gitignore
+.claude/settings.json
+```
+
+- `settings.local.json` は、パソコン全体の gitignore（`~/.config/git/ignore`）の `**/.claude/settings.local.json` で、すでに外れている
+- `.claude/skills/` も、このボールトの `.gitignore` で外している。`.claude/agents/`・`.claude/commands/` は空なので、git には出てこない
+- `settings.json` はまだ一度もコミットしていない（`?? .claude/`）ので、`git rm --cached` は要らない。`.gitignore` に 1 行足すだけでよい
+- 2026-11-22 に、このボールトの `.gitignore` に `.claude/settings.json` を足した
+- 中身は消してもかまわない。のこすなら、`"Bash(git status*)"` のように **何度も使う形** に書きなおす
+
+### コミットしたほうがよい場合
+- **いつも使う許可やフック** を、ほかのパソコンでも同じにしたいとき。たとえば「`git diff` と `git log` は聞かずに動かす」など
+- そのときは、長いコマンドを消して、`Bash(git log*)` のような短い形だけを `settings.json` に残し、コミットする。その場限りの許可は `settings.local.json` に入るようにする
+
 ## Git プラグインと、ほかの方法のちがい
 | 方法 | よいところ | 気をつけること |
 | --- | --- | --- |

@@ -5,6 +5,7 @@
 .obsidian/plugins/grimoire/data.json
 .agents/skills/
 .claude/skills/
+.claude/settings.json
 .copilot/
 .grimoire/
 /copilot/copilot-conversations/agent__*.md
