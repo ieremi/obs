@@ -128,6 +128,34 @@ CLAUDE="$HOME/.local/bin/claude"   # nvm の PATH は Obsidian から見えな�
   - 一度コミットしたファイルは、`.gitignore` に書くだけでは追跡が止まらない。`git rm --cached` が要る
 - プラグインを入れると `.obsidian/plugins/obsidian-git/` ができる。設定（`data.json`）をほかのパソコンと共有したいなら、コミットしてよい
 
+### `appearance.json` は ignore しなくてよい
+**外さずに、コミットしつづけるのがよい。** `workspace.json` や `graph.json` とちがって、開いているだけでは書きかわらない。設定画面の「外観」を変えたときだけ変わる。
+
+中身（2026-11-22 に見た）：
+
+| 項目 | 値 | 意味 |
+| --- | --- | --- |
+| `theme` | `moonstone` | 基本の色。`moonstone` は明るい色（light）、`obsidian` は暗い色（dark）、`system` は OS に合わせる |
+| `enabledCssSnippets` | `ubuntu-ja`、`ohohama` | 有効にしている CSS snippet |
+| `showRibbon` | `true` | 左のリボンを出す |
+| `accentColor` | `""` | アクセントの色（空は既定） |
+
+- **snippet とセットになっている**：`.obsidian/snippets/ohohama.css` はコミットしてある。`appearance.json` を外すと、ほかのパソコンで snippet のファイルは来るのに、有効にはならない
+- **変わる回数が少ない**：見た目を変えたときに、意味のある変更として「〇〇を変更」とコミットすればよい
+- ほかのパソコンでも同じ見た目にしたいなら、なおさら共有したほうがよい
+
+#### ただし、`theme` は何度も変わっている
+履歴を見ると、`theme` が 1 日で `obsidian` → `moonstone` → `obsidian` → `moonstone` と変わっている（2026-11-21〜22）。明るい色と暗い色を **時間や気分で切りかえている** なら、そのたびに差分が出る。そのときは、次のどれかにする。
+
+1. **（おすすめ）OS に合わせる**：設定 → 外観 → **基本の配色**（Base color scheme）を「**システムに合わせる**」（Adapt to system）にする。`theme` が `system` で固定され、明るさは KDE の設定で切りかわる。ファイルはもう変わらない
+2. **手元の変更として無視する**：`git update-index --skip-worktree .obsidian/appearance.json` とすると、追跡はつづけたまま、このパソコンでの変更を git が見なくなる。もどすときは `--no-skip-worktree`。ただし、ほかのパソコンからこのファイルの変更がプルされると、ぶつかることがある
+3. **パソコンごとに見た目を変えたい** なら、`.gitignore` に足して `git rm --cached` する。snippet の有効・無効もパソコンごとになる
+
+- 1 台のパソコンでしか使っていないなら、どれもしないで、変えたときにコミットするだけでもよい
+
+#### 気づいたこと
+- `enabledCssSnippets` に `ubuntu-ja` があるが、`.obsidian/snippets/` には `ohohama.css` しかない。`ubuntu-ja.css` は消したか、まだ作っていないかで、いまは何も効いていない。要らなければ、設定 → 外観 → CSS snippets で切れば、ここから消える
+
 ## `.claude/settings.json` の扱い
 **このボールトでは、`.gitignore` で外す（コミットしない）のがよい。**
 
