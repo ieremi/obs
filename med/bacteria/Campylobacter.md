@@ -53,7 +53,7 @@ tags:
 
 ### ラテン語文法
 - *Campylobacter* は男性名詞 (*-bacter* で終わる属名は男性)。[[Acinetobacter]] と同じ
-- ***jejuni*** と ***coli*** は **名詞の属格** (第 2 変化の中性名詞 *jejunum* → *jejuni*、*colon* → *coli*)。名詞なので属の性に合わせない。[[Escherichia|*Escherichia coli*]] の *coli* とまったく同じ
+- ***jejuni*** と ***coli*** は **名詞の属格** (第 2 変化の中性名詞 *jejunum* → *jejuni*、*colon* → *coli*)。名詞なので属の性に合わせない。*[[Escherichia|Escherichia coli]]* の *coli* とまったく同じ
 - ***fetus*** は **名詞の同格** (主格のまま)。第 4 変化の名詞で、属が変わっても形は変わらない
 - ***upsaliensis*** は *-ensis* の形容詞 (「〜の土地の」)。第 3 変化で、男性・女性は *-ensis*、中性は *-ense*。*Campylobacter* は男性なので *upsaliensis*
 - [[Helicobacter]] の *pylori* (「幽門の」) も同じく名詞の属格で、カンピロバクター属にいたころに *pyloridis* から *pylori* に直された

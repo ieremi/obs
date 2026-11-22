@@ -59,7 +59,7 @@ tags:
 | 奪格 | cloācā | cloācīs |
 
 - 第 1 変化では、単数属格と複数主格が同じ *-ae* になる。種小名の *cloacae* は「下水の」(単数属格)
-- 名詞の属格なので、男性名詞の属名 *Enterobacter* に合わせて形を変える必要はない([[Escherichia|*Escherichia coli*]] の *coli* と同じ)
+- 名詞の属格なので、男性名詞の属名 *Enterobacter* に合わせて形を変える必要はない(*[[Escherichia|Escherichia coli]]* の *coli* と同じ)
 - 人名の *hormaechei* は、名前が母音 -e で終わるので *-i* だけを付けている(子音で終わる名前なら *baumannii* のように *-ii*)
 
 ## 性状
