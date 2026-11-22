@@ -52,6 +52,7 @@ body.theme-dark {
   --ohohama-h2-bg: #0b8bee09;
   --ohohama-h2-border: #e6edf973;
   --ohohama-h3-bg: #57b1ff0d;
+  --ohohama-h1-text: #bfc8cc;
   --ohohama-h1-band: #0b8bee24;
   --ohohama-h1-circle: #00bbdf73;
   --ohohama-h2-bar: #0B8BEE;
@@ -111,6 +112,7 @@ body.theme-light {
   --ohohama-h2-bg: #0b8bee08;
   --ohohama-h2-border: #ffffff;
   --ohohama-h3-bg: #0b8bee0b;
+  --ohohama-h1-text: #4b5457;
   --ohohama-h1-band: #0b8bee24;
   --ohohama-h1-circle: #00bbdf73;
   --ohohama-h2-bar: #00205B;
@@ -203,7 +205,7 @@ body.theme-light {
   --h1-line-height: 1.3;
   --h2-line-height: 1.35;
   --h3-line-height: 1.4;
-  --h1-color: var(--ohohama-heading);
+  --h1-color: var(--ohohama-h1-text);
   --h2-color: var(--ohohama-heading);
   --h3-color: var(--ohohama-heading-accent);
   --h4-color: var(--ohohama-heading-sub);
@@ -212,20 +214,20 @@ body.theme-light {
   --heading-spacing: 2.2em;
 }
 
-/* h1: a pale blue pill-shaped band, with a light blue circle that fills its left end
-   and sits behind the first letter.
+/* h1: a pale blue pill-shaped band, with a light blue circle that fills its left end.
    - The band is 1.5em tall (line height 1.3em + 0.1em above and below), and its corners
      are half of that, so the left end is a half circle of the same size as the circle
-   - The text starts 0.25em in, so a full-width first character is centered at 0.75em,
-     which is also the center of the circle
-   - The circle is centered on the first line, so it stays on the first letter when
-     the heading wraps */
+   - The text starts 1.85em in, just past the circle, so they do not overlap
+   - Noto Sans CJK JP sits low in its line, so the padding is moved from top to bottom
+     to center the text in the band
+   - The circle is as tall as the band, so it is centered whatever the band's real height;
+     it is capped so a wrapped heading does not get a huge circle */
 .markdown-rendered h1,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 {
   position: relative;
   isolation: isolate;
   margin-left: 0;
-  padding: 0.1em 0.8em 0.1em 0.25em;
+  padding: 0.02em 0.8em 0.18em 1.85em;
   border: none;
   border-radius: 0.75em;
   background: var(--ohohama-h1-band);
@@ -238,12 +240,12 @@ body.theme-light {
   position: absolute;
   z-index: -1;
   left: 0;
-  top: calc(0.1em + var(--h1-line-height) * 0.5em);
-  width: 1.5em;
-  height: 1.5em;
+  top: 0;
+  height: 100%;
+  max-height: 1.6em;
+  aspect-ratio: 1;
   border-radius: 50%;
   background: var(--ohohama-h1-circle);
-  transform: translateY(-50%);
   pointer-events: none;
 }
 
