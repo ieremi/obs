@@ -9,5 +9,5 @@
 - 赤、オレンジ、黄、緑などの暖色系やその他の色相は使用しない。
 
 ## 3. Ohohama のスニペット
-- `.obsidian/snippets/ohohama.css` は `~/prd/src/ohohama` の `obsidian/` から生成したものを、そのままコピーしている。このファイルは直接編集しない。
-- 見た目を変えるときは `~/prd/src/ohohama` の `obsidian/config.ts`・`obsidian/rules.css` を編集し、`~/prd/src/ohohama` で `OBSIDIAN_SNIPPETS_DIR=~/prd/src/obs/.obsidian/snippets npm run deploy:obsidian` を実行してコピーする。
+- `../.obsidian/snippets/ohohama.css`（保管庫ルート `Documents/.obsidian/snippets/ohohama.css`） は `~/prd/src/ohohama` の `obsidian/` から生成したものを、そのままコピーしている。このファイルは直接編集しない。
+- 見た目を変えるときは `~/prd/src/ohohama` の `obsidian/config.ts`・`obsidian/rules.css` を編集し、`~/prd/src/ohohama` で `OBSIDIAN_SNIPPETS_DIR="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/.obsidian/snippets" npm run deploy:obsidian` を実行してコピーする。
