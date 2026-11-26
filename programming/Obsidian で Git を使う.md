@@ -4,7 +4,7 @@ aliases: [Obsidian で Git を使う, Obsidian Git, obsidian-git, Git プラグ�
 related:
   - "[[Obsidian を Ubuntu で使う]]"
   - "[[Obsidianのカスタマイズ]]"
-確認日: 2026-11-21
+確認日: 2026-11-26
 ---
 # Obsidian で Git を使う
 
@@ -12,6 +12,133 @@ related:
 
 - デスクトップでは、パソコンに入っている **git コマンドを呼び出して** 動く。だから、端末や VS Code で使っている git の設定（ユーザー名、SSH の鍵、`.gitignore`）がそのまま効く
 - このボールトは、すでに git のリポジトリ（`origin` は `git@github.com:ieremi/obs.git`）なので、入れればすぐ使える
+
+## ほかの人は vault をどう Git 管理しているか
+
+調査・確認日：**2026-11-26**。公開された利用者の投稿と開発元のドキュメントから、次のような運用が確認できた。利用率の統計ではないため、どれが多数派かまでは判断できない。
+
+### 運用は「同期も Git」か「履歴だけ Git」かで分かれる
+
+| 運用 | 実際の使い方 | 向いている条件 |
+| --- | --- | --- |
+| Git を同期と履歴保存に使う | 端末ごとに clone し、編集前に pull、編集後に commit・push。Obsidian Git で自動化することもできる | 主に PC で使い、競合を自分で解決できる |
+| Obsidian Sync で同期し、Git は履歴保存 | ノートの転送は Sync、Git の commit・push は代表の PC で行う | スマホでも編集しつつ、Git の差分・履歴を残したい |
+| iCloud などで同期し、Git は履歴保存 | ノートはクラウド同期し、Git の管理データは同期対象外の場所に置く | すでにクラウド同期を使っている |
+| Obsidian の外で Git を操作 | 端末や VS Code で変更を選び、意味のある単位でコミットする | コミットの内容・メッセージを確認して残したい |
+
+Git プラグインは自動 commit-and-sync と差分・履歴表示に対応する。一方、開発元はモバイル版に不安定さがあることも明記している。PC と同じ安定性を前提にスマホへ広げるのは避けたい。[Git プラグインの README](https://github.com/Vinzent03/obsidian-git)
+
+**「同期は別のサービス、Git は履歴」という構成は、プラグイン公式ドキュメントにも載っている運用**。Git を一台だけで動かすための `Disable on this device` と、別サービスが同期したファイルを pull で更新しないための `Other sync service` という merge strategy が案内されている。これは目的に応じた設定であり、通常の Git 同期にそのまま当てはめるものではない。[Git：Tips and Tricks](https://publish.obsidian.md/git-doc/Tips-and-Tricks)
+
+### 利用者が公開している具体例
+
+- **iCloud と Git を併用する人**：iCloud が `.git` 内の管理データまで同期して競合した経験から、管理データをクラウド外へ移し、vault 内には参照用の `.git` ファイルを置く構成を紹介している。これは本人の経験談で、あらゆる競合を防ぐ保証ではない。[本人の投稿：Using git for versioning alongside cloud for syncing](https://www.reddit.com/r/ObsidianMD/comments/1fia8yi/using_git_for_versioning_alongside_cloud_for/)
+- **設定をどこまで共有するか迷う人**：`.obsidian/` 全体を無視する案に対し、開いているタブなどの workspace だけ除外し、テーマやプラグインは共有する考え方が議論されている。設定全体を除外すると端末ごとの設定になる、という違いがある。[利用者の議論：Ignore .obsidian when using git to sync?](https://www.reddit.com/r/ObsidianMD/comments/1js8b9i/ignore_obsidian_when_using_git_to_sync/)
+
+### `.gitignore` は「ノート」と「端末の状態」を分ける
+
+Git プラグインの公式ドキュメントは、`.obsidian/` 全体を除外する方法と、workspace だけを除外する方法を選択肢として示している。後者を使う基本例は次のとおり。[公式の Gitignore 例](https://publish.obsidian.md/git-doc/Tips-and-Tricks)
+
+```gitignore
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+.DS_Store
+```
+
+テーマ・ショートカット・CSS も再現したければ、それらは追跡する。プラグイン設定に認証情報が入る場合は、そのファイルを個別に除外する。すでに追跡中のファイルは `.gitignore` に書くだけでは追跡が止まらない。
+
+### この保管庫との比較と提案
+
+2026-11-26 に確認した、このリポジトリ（`Documents/obs`）の状態：
+
+- `obs/.git` はディレクトリではなく、`gitdir: /Users/ieremius/git/obs.git` と書かれた参照ファイル。**Git の管理データはすでに iCloud の外にある**。
+- `.gitignore` で workspace、graph、ゴミ箱、OS のファイル、一部の AI プラグインの設定・生成物を除外している。
+- したがって、構成は上記の「クラウド同期の対象から Git 管理データを分離する」実例に近い。ただし、他端末の同期設定や動作までは今回確認していない。
+
+**この構成を保ち、Git に履歴を残す操作は代表の PC に寄せるのが、まず取りやすい運用**と考える。ノートを同期する役割と Git の履歴を作る役割を明確にできる。内容を確認してコミットする現在の方針なら、ほかの人が自動コミットしているからといって自動化する必要はない。復元用の細かい記録を優先したい場合は、一定間隔の自動コミットも選択肢になる。
+
+別の PC でも Git を動かす場合、`.git` ファイルの絶対パスは各端末で有効な必要がある。その参照ファイル自体を iCloud で共有しても、参照先の Git 管理データが各端末へ用意されるわけではない。Git が管理データを別の場所に置く仕組み自体は `--separate-git-dir` として公式に用意されている。[Git：git-init](https://git-scm.com/docs/git-init)
+
+なお、Obsidian 公式は同じ vault を複数の同期サービスで同時に同期しないよう案内している。履歴保存用の Git を追加する場合も、iCloud に加えて各端末から Git の pull でノートを書き換える運用に広げる際は、どちらが同期を担うかを決める必要がある。[Obsidian：Sync your notes across devices](https://obsidian.md/help/sync-notes)
+
+上記は運用の提案であり、今回、Git 設定・同期設定・自動コミット設定は変更していない。
+
+### Obsidian Sync で同期し、Git は履歴保存にする場合の点検
+
+2026-11-26 に、この Mac の保管庫の実物と Obsidian 公式ヘルプで確かめた。
+
+**結論：いまの構成は、この運用には合っていない。** 直すべき点は次の 2 つ。
+
+#### 1. 保管庫が iCloud Drive の中にある
+
+- 保管庫のルートは `~/Library/Mobile Documents/iCloud~md~obsidian/Documents`、つまり iCloud Drive の Obsidian フォルダーである。`.obsidian/core-plugins.json` では Sync も有効になっている。
+- Obsidian 公式は「Obsidian Sync をクラウドストレージ（iCloud、Dropbox、OneDrive、Google Drive など）と併用することはすすめない。競合の原因になる」としている。iCloud から切り替えるときは、まず保管庫を iCloud の外へ移すよう案内している。[Obsidian：Switch to Obsidian Sync](https://obsidian.md/help/sync/switch)
+- 併用すると、復元したファイルが Sync からすぐ消えるといった症状が出るとトラブルシューティングに書かれている。[Obsidian：Troubleshoot Obsidian Sync](https://obsidian.md/help/sync/troubleshoot)
+- macOS での置き場所の例として、公式は `/Users/<ユーザー名>/vaults` を挙げている。
+
+#### 2. Git の範囲が保管庫の一部だけになっている
+
+- Git の作業ツリーは `Documents/obs` で、保管庫ルートの `Documents` ではない。Obsidian Git も `basePath: "obs"` で動いている。
+- そのため、ルート直下にある `.obsidian/`（設定・テーマ・スニペット）、`AGENTS.md`、`クービビック.md`、`ハイドロキノン.md`、`copilot/` などは Git の履歴に残らない。
+- 2026-11-25 のコミット「Obsidian設定を保管庫ルートへ統合」で `.obsidian/` は `obs` の外へ出た。`obs/.gitignore` に書かれた `.obsidian/workspace.json`、`.claude/settings.json`、`/copilot/copilot-conversations/` などは、保管庫ルートが Git のルートでもある前提の書き方で、いまは該当するファイルが `obs` の中にない。
+- `obs/Users:.fileloc` は、Finder が作った場所の参照ファイル（中身は `.obsidian/snippets` へのリンク）で、ノートではない。未追跡のまま残っている。
+
+#### 問題ない点
+
+- Git の管理データを `~/git/obs.git` に置き、`obs/.git` を参照ファイルにしている点は、iCloud をやめた後も使える。参照先は絶対パスなので、保管庫を移しても有効である。
+- Obsidian Sync は `.` で始まるファイル・フォルダーを同期しない（例外は `.obsidian`）。公式は除外される例として `.git` と `.gitignore` を挙げている。そのため、Sync に移った後は `.git` を保管庫の中に普通のフォルダーとして置いても Sync とはぶつからない。[Obsidian：Sync settings](https://obsidian.md/help/sync/settings)
+- 逆に、`.gitignore` も Sync されないので、Git を動かす Mac にだけあればよい。
+
+#### 目標の構成
+
+| 場所 | Obsidian Sync | Git |
+| --- | --- | --- |
+| 保管庫ルート（iCloud の外、例：`~/vaults/obs`） | 同期する | ここを作業ツリーのルートにする |
+| `.obsidian/`（設定・プラグイン・スニペット） | 同期する | 追跡する（`workspace*.json`、`graph.json`、認証情報の入る `data.json` は除外） |
+| ノートのフォルダー（`med/`、`programming/` など） | 同期する | 追跡する |
+| `.git`（フォルダー、または `~/git/obs.git` への参照ファイル） | 同期されない | 代表の Mac だけに置く |
+
+保管庫ルートと Git のルートを一致させるには、次の 2 案がある。どちらにするかはまだ決めていない（計画段階）。
+
+- **案 A：`obs` を保管庫にする。** ルート直下の `.obsidian/`、`AGENTS.md`、2 つのノート、`copilot/` を `obs` に入れ、`obs` を iCloud の外へ移して保管庫として開き直す。Git の中のパスが変わらず、いまの `.gitignore` がそのまま当てはまる。昨日の統合の向きを戻すことになるので、`obs/AGENTS.md` とルートの `AGENTS.md` の中身は 1 つにまとめる必要がある。
+- **案 B：いまのルート（`Documents`）を Git のルートにする。** Git の作業ツリーを 1 つ上へ広げる。すべてのノートのパスに `obs/` が付くので、履歴上は全ファイルの移動になる（`git log --follow` で追える）。
+
+パスが変わらず、`.gitignore` が案 A の形で書かれていることから、**案 A のほうが手間と混乱が少ない**と考える。
+
+#### 移すときの手順（案）
+
+1. すべての端末で Obsidian を終了し、保管庫のバックアップをとる。
+2. この Mac で、保管庫の切り替え画面の「保管庫を別のフォルダーへ移動」を使い、iCloud の外（例：`~/vaults/`）へ移す。[Obsidian：Switch to Obsidian Sync](https://obsidian.md/help/sync/switch)
+3. `git rev-parse --show-toplevel` で、Git が新しい場所を作業ツリーとして認識しているか確かめる。
+4. Sync の設定で、移した保管庫をリモート保管庫につなぎ直す。
+5. iPhone などほかの端末では iCloud の保管庫を使わず、Sync から新しいローカル保管庫を作る。公式も、すでに Sync にデータがあるならそうするよう案内している。古い iCloud のフォルダーは、同期が済んだのを確かめてから消す。
+6. `.obsidian/plugins/` は Sync で配られるので、Git のプラグインもほかの端末に届く。Git を動かすのは代表の Mac だけにし、ほかの端末ではプラグインの `Disable on this device` を入れる。[Git：Tips and Tricks](https://publish.obsidian.md/git-doc/Tips-and-Tricks)
+7. 代表の Mac で Obsidian Git の pull を使うなら、merge strategy を `Other sync service` にするか、pull を切って commit・push だけにする。
+8. `obs/Users:.fileloc` を消す。案 A なら、Obsidian Git の `basePath` を空に戻す。
+
+#### 移行の記録（2026-11-26 実施、案 A）
+
+確定したこと：
+
+- 保管庫を `~/vaults/obs` に作り直した。元の `iCloud~md~obsidian/Documents` は消さずにバックアップとして残してある（コピーで移したため）。
+- 元のルートにあった `.obsidian/`、`copilot/`、`.copilot/`、`.claude/settings.local.json` を `obs` の中へ入れた。`.claude/skills/` のシンボリックリンクは、iCloud の絶対パスから相対パス（`../../copilot/skills/…`）に張り直した。
+- ルート直下の `クービビック.md` と `ハイドロキノン.md` は `med/drug/` へ移した。
+- 2 つの `AGENTS.md` を 1 つにまとめ、Ohohama のスニペットの配置先を新しいパスに直した。
+- Obsidian Git の `basePath` を空にした（保管庫ルートと Git のルートが一致したため）。
+- `.gitignore` に `.claude/settings.local.json` と `*.fileloc` を足した。`Users:.fileloc` は消した。
+- Obsidian の保管庫一覧（`~/Library/Application Support/obsidian/obsidian.json`）で、同じ保管庫 ID の場所を新しいパスに書きかえた。
+- `git rev-parse --show-toplevel` が `/Users/ieremius/vaults/obs` を返すことを確かめた。
+
+移さなかったもの：中身のない `Untitled.base`・`Untitled.canvas`、設定のバックアップ `.config-backups/`。これらは元の iCloud フォルダーに残っている。
+
+まだ済んでいないこと（手作業が要る）：
+
+1. Obsidian を起動し、`~/vaults/obs` が開くことを確かめる。
+2. 設定 → Sync で、この保管庫をリモート保管庫に接続する（`sync.json` がなく、まだ接続されていなかった）。
+3. iPhone などでは、iCloud の保管庫を開かず、Sync から新しいローカル保管庫を作る。Git のプラグインは `Disable on this device` にする。
+4. 新しく Git の追跡対象になった `.obsidian/`、`copilot/skills/` の一部、移したノートを確認してコミットする。
+5. すべて問題なければ、元の iCloud フォルダーを消す。
 
 ## 入れ方
 1. 設定（`Ctrl+,`）→ **Community plugins** → **Browse**
@@ -205,4 +332,6 @@ CLAUDE="$HOME/.local/bin/claude"   # nvm の PATH は Obsidian から見えな�
 - [obsidian-git の README（GitHub）](https://github.com/Vinzent03/obsidian-git)：できること（Source Control・History・Diff の画面、エディターの印、衝突の解決、自動の commit-and-sync、起動時のプル、GitHub で開く）、コマンドの一覧、Linux では Snap が使えず Flatpak はすすめないこと、デスクトップではパソコンの git を呼ぶこと、スマホではとても不安定なこと
 - GitHub の API（`Vinzent03/obsidian-git` の latest）：2.43.0、2026 年 11 月 5 日（このパソコンで curl で調べた）
 - このボールトの `origin` と `.gitignore`：このパソコンで見た
+- [Obsidian：Switch to Obsidian Sync](https://obsidian.md/help/sync/switch)、[Sync settings](https://obsidian.md/help/sync/settings)、[Troubleshoot Obsidian Sync](https://obsidian.md/help/sync/troubleshoot)、[Sync FAQ](https://obsidian.md/help/sync/faq)：Sync とクラウドストレージの併用をすすめないこと、iCloud の外へ移す手順、`.` で始まるファイルが同期されないこと（2026-11-26 確認）
+- 保管庫の場所、`core-plugins.json` の Sync、Obsidian Git の `basePath`、`obs/.git` の参照先：このパソコンで見た（2026-11-26）
 - 設定の項目の名前（Auto commit-and-sync interval など）と、既定のコミットメッセージ「vault backup: {{date}}」：一般的な知識（ウェブでの確認はしていない）。くわしくは [プラグインのドキュメント](https://publish.obsidian.md/git-doc)

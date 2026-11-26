@@ -14,3 +14,6 @@
 */.obsidian/workspace-mobile.json
 .trash/
 .DS_Store
+.claude/settings.local.json
+*.fileloc
+.obsidian/plugins/*/main.js

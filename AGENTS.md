@@ -1,13 +1,32 @@
-# ユーザーの好み・執筆ルール
+# この保管庫での応答方針・執筆ルール
 
 ## 1. 回答・出力の形式
-- ユーザーがトピックを提示したときや質問をしたときは、チャット上で回答を完結させず、Obsidian内の適切なページ（ノート）を作成または追記して記録する。
-- チャットでは完了報告および該当ページへのファイルリンク（`file://` 形式）のみを簡潔に伝える。
 
-## 2. 図・ビジュアル表現の配色
+ユーザーが2026年11月19日に指定した継続的な希望：
+
+- ユーザーがトピックを伝えたら、まず保管庫内で関連するページを探す。表記違いや別名も確認する。
+- 該当するページがなければ、内容のある新しいMarkdownページを適切な場所に作成する。
+- ユーザーが質問したら、回答はチャット本文ではなく、該当するページに記載する。既存の内容を保ちながら追記・更新する。
+- チャットでは、作成・更新したページへのリンク（`file://` 形式）と簡潔な完了報告を伝える。
+- 調査した情報にはページ内で出典を付ける。変わり得る情報は確認日を明記し、計画と確定事項を区別する。
+- その後ユーザーが個別に別の形式を指定した場合は、その指定を優先する。
+
+## 2. 医薬品ページ
+
+- 医薬品ページのタイトル・ファイル名は一般名にする。商品名はaliasesに記録して検索できるようにする（2026年11月19日指定）。
+- オセルタミビルとバロキサビルのページ名は、ユーザー指定により「オセルタミビル」「バロキサビル」とする。正式な成分名（塩・プロドラッグ名）は本文とaliasesに残す。
+
+## 3. 図・ビジュアル表現の配色
+
 - ノート内に掲載する図（SVG、Mermaid、ダイアグラム等）には、**無彩色（白、黒、グレー、`currentColor`）と青系（ブルー、ネイビー、スレートブルー等）のみ**を使用する。
 - 赤、オレンジ、黄、緑などの暖色系やその他の色相は使用しない。
 
-## 3. Ohohama のスニペット
-- `../.obsidian/snippets/ohohama.css`（保管庫ルート `Documents/.obsidian/snippets/ohohama.css`） は `~/prd/src/ohohama` の `obsidian/` から生成したものを、そのままコピーしている。このファイルは直接編集しない。
-- 見た目を変えるときは `~/prd/src/ohohama` の `obsidian/config.ts`・`obsidian/rules.css` を編集し、`~/prd/src/ohohama` で `OBSIDIAN_SNIPPETS_DIR="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/.obsidian/snippets" npm run deploy:obsidian` を実行してコピーする。
+## 4. Ohohama のスニペット
+
+- `.obsidian/snippets/ohohama.css` は `~/prd/src/ohohama` の `obsidian/` から生成したものを、そのままコピーしている。このファイルは直接編集しない。
+- 見た目を変えるときは `~/prd/src/ohohama` の `obsidian/config.ts`・`obsidian/rules.css` を編集し、`~/prd/src/ohohama` で `OBSIDIAN_SNIPPETS_DIR="$HOME/vaults/obs/.obsidian/snippets" npm run deploy:obsidian` を実行してコピーする。
+
+## 5. 同期と Git
+
+- 保管庫は `~/vaults/obs`（iCloud の外）に置き、端末間の同期は Obsidian Sync で行う（2026年11月26日に移行）。
+- Git は履歴保存用。commit・push はこの Mac だけで行う。Git の管理データは `~/git/obs.git` にあり、`.git` はそこを指す参照ファイル。
