@@ -24,9 +24,9 @@
 ## 4. Ohohama のスニペット
 
 - `.obsidian/snippets/ohohama.css` は `~/prd/src/ohohama` の `obsidian/` から生成したものを、そのままコピーしている。このファイルは直接編集しない。
-- 見た目を変えるときは `~/prd/src/ohohama` の `obsidian/config.ts`・`obsidian/rules.css` を編集し、`~/prd/src/ohohama` で `OBSIDIAN_SNIPPETS_DIR="$HOME/vaults/obs/.obsidian/snippets" npm run deploy:obsidian` を実行してコピーする。
+- 見た目を変えるときは `~/prd/src/ohohama` の `obsidian/config.ts`・`obsidian/rules.css` を編集し、`~/prd/src/ohohama` で `OBSIDIAN_SNIPPETS_DIR="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/obs/.obsidian/snippets" npm run deploy:obsidian` を実行してコピーする。
 
 ## 5. 同期と Git
 
-- 保管庫は `~/vaults/obs`（iCloud の外）に置き、端末間の同期は Obsidian Sync で行う（2026年11月26日に移行）。
+- 保管庫は iCloud Drive の `Obsidian/obs`（Mac では `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/obs`）に置き、端末間の同期は iCloud で行う。Obsidian Sync は使わない（2026年11月26日指定）。
 - Git は履歴保存用。commit・push はこの Mac だけで行う。Git の管理データは `~/git/obs.git` にあり、`.git` はそこを指す参照ファイル。

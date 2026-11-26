@@ -17,3 +17,4 @@
 .claude/settings.local.json
 *.fileloc
 .obsidian/plugins/*/main.js
+*.icloud

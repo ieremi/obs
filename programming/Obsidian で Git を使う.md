@@ -66,6 +66,9 @@ Git プラグインの公式ドキュメントは、`.obsidian/` 全体を除外
 
 ### Obsidian Sync で同期し、Git は履歴保存にする場合の点検
 
+> [!note] この方針は同じ日に取りやめた
+> 2026-11-26 のうちに、Obsidian Sync は使わず iCloud で同期する方針に変えた。現在の構成は「[[#iCloud で同期し、Git は履歴保存にする（現在の構成）]]」を参照。以下はその前の点検と作業の記録として残す。
+
 2026-11-26 に、この Mac の保管庫の実物と Obsidian 公式ヘルプで確かめた。
 
 **結論：いまの構成は、この運用には合っていない。** 直すべき点は次の 2 つ。
@@ -139,6 +142,55 @@ Git プラグインの公式ドキュメントは、`.obsidian/` 全体を除外
 3. iPhone などでは、iCloud の保管庫を開かず、Sync から新しいローカル保管庫を作る。Git のプラグインは `Disable on this device` にする。
 4. 新しく Git の追跡対象になった `.obsidian/`、`copilot/skills/` の一部、移したノートを確認してコミットする。
 5. すべて問題なければ、元の iCloud フォルダーを消す。
+
+#### 元の iCloud フォルダーを消してよいか（2026-11-26 15 時ごろ点検）
+
+**中身の面では消してよい。** 元のフォルダーにしかないものは、次のとおり不要なものだけだった。コピーの後に iCloud 側で更新されたファイルもなかった。
+
+- `.DS_Store`（Finder が作るファイル）と `Users:.fileloc`（場所の参照ファイル）。
+- 中身のない `Untitled.base`・`Untitled.canvas`。
+- 統合前の設定のバックアップ `.config-backups/`。念のため残すなら、iCloud の外へ移しておく。
+
+**ただし、消すのは次の 3 点が済んでからにする。**
+
+1. **開いている保管庫が `~/vaults` になっている。** Obsidian の保管庫一覧で開いているのは `~/vaults/obs` ではなく、その 1 つ上の `~/vaults` で、そこに新しい `.obsidian/` ができていた。このまま使うと、保管庫ルートが Git のルートより上になり、移行前と同じずれが起きる。保管庫の切り替え画面で `~/vaults/obs` を開き直し、`~/vaults` は一覧から外す。`~/vaults/.obsidian/` は Ohohama のスニペットを入れて表示を整えただけのもので、`~/vaults/obs/.obsidian/` に同じスニペットがある。
+2. **Sync にまだつながっていない。** どちらの保管庫にも Sync の接続の記録がない。`~/vaults/obs` を Sync のリモート保管庫につなぐ。
+3. **ほかの端末を Sync に切り替える。** iCloud のフォルダーを消すと、iPhone などの iCloud 上の保管庫も消える。先に各端末で Sync から新しい保管庫を作り、iCloud の保管庫に未同期の変更がないことを確かめる。
+
+消すときは、Obsidian の保管庫一覧から元の保管庫を外してから、Finder で `iCloud Drive/Obsidian/Documents` をゴミ箱に入れる。ゴミ箱を空にするまでは取り戻せる。
+
+### iCloud で同期し、Git は履歴保存にする（現在の構成）
+
+2026-11-26 に、Obsidian Sync は使わず、iCloud で同期する方針に決めた（確定）。
+
+#### 構成
+
+| 場所 | iCloud | Git |
+| --- | --- | --- |
+| 保管庫ルート `iCloud Drive/Obsidian/obs`（Mac では `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/obs`） | 同期する | 作業ツリーのルート |
+| `.obsidian/`、ノートのフォルダー | 同期する | 追跡する（`workspace*.json`、`graph.json`、プラグイン本体 `main.js`、認証情報の入る `data.json` は除外） |
+| `.git`（`gitdir: /Users/ieremius/git/obs.git` と書いた参照ファイル） | 同期される（数十バイトのテキストで、ほかの端末では使われない） | 管理データの本体は iCloud の外の `~/git/obs.git` |
+
+- iPhone・iPad の Obsidian は、iCloud Drive の `Obsidian` フォルダーの中にあるフォルダーを保管庫として扱う。そのため、保管庫は `Documents` 直下の 1 つのフォルダー（`obs`）にし、`Documents` 自体には設定やノートを置かない。[Obsidian：Sync your notes across devices](https://obsidian.md/help/sync-notes)
+- Git の管理データを iCloud の外に置くのは、iCloud が `.git` の中の小さなファイルを同期して壊したり競合させたりするのを避けるため。利用者の報告にもとづく対策で、公式の保証ではない。[本人の投稿：Using git for versioning alongside cloud for syncing](https://www.reddit.com/r/ObsidianMD/comments/1fia8yi/using_git_for_versioning_alongside_cloud_for/)
+- Git を動かすのはこの Mac だけにする。`.obsidian/plugins/` は iCloud で配られるので、iPhone などでは Git のプラグインを `Disable on this device` にする。Mac で pull を使う場合は merge strategy を `Other sync service` にする。[Git：Tips and Tricks](https://publish.obsidian.md/git-doc/Tips-and-Tricks)
+- 同期サービスを 2 つ重ねないよう、コアプラグインの Sync は切った。
+
+#### 作業の記録（2026-11-26 実施）
+
+- Obsidian を終了してから、`~/vaults/obs` を `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/obs` へ移した。`git rev-parse --show-toplevel` がこのパスを返すことを確かめた。
+- 元の iCloud の `Documents` にあった古いコピー（`obs/`、`.obsidian/`、`copilot/`、`AGENTS.md`、2 つのノート、`Untitled.*`、`.config-backups/` など）は、消さずに iCloud の外の `~/vaults-backup/icloud-Documents-20261126/` へ移した。誤って `~/vaults` を保管庫として開いたときにできた `.obsidian/` も、同じ場所に `vaults-parent.obsidian` として移した。
+- `.obsidian/core-plugins.json` で Sync を切った。
+- Obsidian の保管庫一覧で、保管庫の場所を新しいパスに直し、`~/vaults` の項目を消した。
+- Copilot プラグインが `.claude/skills/` のリンクを `~/vaults/obs` の絶対パスで作り直していたので、相対パスに戻した。
+- `.gitignore` に `*.icloud`（iCloud がまだダウンロードしていないファイルの仮置き）を足した。
+- `AGENTS.md` の保管庫の場所と Ohohama のコピー先を、新しいパスに直した。
+
+#### 気をつけること
+
+- **「Mac のストレージを最適化」が入っている**（`com.apple.bird optimize-storage` が 1）。空き容量が減ると、iCloud がノートをこの Mac から追い出して中身のない仮置きにすることがある。Git や検索が中身を読めなくなることがあるので、Finder で `obs` フォルダーを右クリックし「ダウンロードしたままにする」を選ぶか、システム設定の iCloud Drive で最適化を切るとよい。
+- iCloud が競合すると、`ノート 2.md` のような名前の複製ができる。Git の差分に見慣れないファイルが出たら、まず競合を疑う。
+- `~/vaults-backup/icloud-Documents-20261126/` は、iPhone などで新しい `obs` が問題なく開けるのを確かめてから消してよい。
 
 ## 入れ方
 1. 設定（`Ctrl+,`）→ **Community plugins** → **Browse**
